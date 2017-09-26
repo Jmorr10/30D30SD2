@@ -11,13 +11,17 @@
 /* First image (Logo. Full height) */
 .bgimg-1 {
     background-image: url('../img/banner.jpg');
-    background-position-y: -15px;
+    background-position-y: -140px;
     min-height: 100%;
+}
+
+#about {
+    padding-top: 53px;
 }
 
 /* Second image (Portfolio) */
 .bgimg-2 {
-    background-image: url('/img/*.jpg');
+    background-image: url('../img/schedule_pic.jpg');
     min-height: 400px;
 }
 
@@ -30,9 +34,60 @@
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
 
+.day-tile {
+    height:200px;
+    position: relative;
+    cursor: pointer;
+}
+
+.day-tile > span {
+    height: 45px;
+}
+
+.day-tile.friday {
+    background-image: url('../img/friday.jpg');
+}
+
+.day-tile.saturday {
+    background-image: url('../img/saturday.jpg');
+}
+
+.day-tile.sunday {
+    background-image: url('../img/sunday.jpg');
+}
+
+
+
+
+
+
+
+
+
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1024px) {
     .bgimg-1, .bgimg-2, .bgimg-3 {
         background-attachment: scroll;
     }
+
+    .bgimg-1 {
+        min-height: calc(100vh - 53px);
+        background-position-y: 0;
+    }
+
+    .about-wrap-container {
+        position: relative;
+        margin-bottom: 177px;
+    }
+
+    .about-wrap {
+        position: absolute;
+        margin: 0;
+        left: -100%;
+    }
+
+    .day-tile {
+        opacity: 1.0 !important;
+    }
+
 }

@@ -1,21 +1,86 @@
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato", sans-serif;
+}
 
 body, html {
     height: 100%;
+
     color: #000;
     line-height: 1.8;
 }
 
-.w3-bar .w3-bar-item {
-    margin: 5px;
+.w3-bar {
+    background-color: #000;
+    color: #FFF;
 }
 
+.w3-bar .w3-bar-item {
+    margin: 5px;
+    padding: 5px 16px;
+}
 
-.parallax-tag-bottom {
+.w3-bar-item .fa {
+    margin-right: 3px;
+}
+
+.parallax-tag {
     position: absolute;
-    bottom: 20px;
-    left: 50%;
+    right: 0;
+    left:0;
+}
 
-    transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
+.pt-top {
+    top:0;
+}
+
+.pt-bottom {
+    bottom: 0;
+}
+
+.parallax-tag > span {
+    display: block;
+}
+
+.read-more {
+    line-height: 1;
+    margin-bottom: 14px;
+}
+
+.anchor-point {
+    width: 100vw;
+    height: 0;
+
+    position: absolute;
+    top: -53px;
+}
+
+hr {
+    height: 1px;
+    margin: 7.5px 0;
+
+    background: #333;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,hsla(0,0%,0%,0)), color-stop(50%,hsla(0,0%,0%,.75)), color-stop(100%,hsla(0,0%,0%,0)));
+    background: -webkit-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background:    -moz-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background:     -ms-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background:      -o-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background:         linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+
+    border: 0;
+}
+
+.absolute-center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#myNavbar {
+    height: 53px;
+    vertical-align: middle;
+    display: table-cell;
+    width: 100vw;
 }
