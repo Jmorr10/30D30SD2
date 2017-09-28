@@ -61,7 +61,7 @@
     top: -3px;
 }
 
-#merchant_form {
+#merchant_form, #contact_form {
     max-width: 667px;
     left: 0;
     right: 0;
@@ -69,7 +69,7 @@
     margin-right: auto;
 }
 
-#merch_register {
+#merch_register, #contact_send {
     width: 100%;
     max-width: 143.8px;
     margin: 0 16px 0 0;
@@ -104,7 +104,7 @@
 }
 
 @media only screen and (max-device-width: 424px) {
-    #merch_register {
+    #merch_register, #contact_send {
         left: 0;
         right: 0;
         margin-right: auto;
@@ -115,5 +115,11 @@
 @media only screen and (min-device-width: 601px) {
     input[name="last_name"] {
         margin-top: 8px !important;
+    }
+}
+
+@media only screen and (max-device-width: 601px) {
+    input[name="contact_name"] {
+        margin-bottom: 16px;
     }
 }

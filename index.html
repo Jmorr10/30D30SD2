@@ -50,7 +50,7 @@
     </div>
 
     <!-- Container (About Section) -->
-    <div class="w3-content w3-container" id="about">
+    <div class="w3-content w3-container" style="margin-bottom: 64px;" id="about">
         <h3 class="w3-center">About RocCon</h3>
         <p class="w3-center"><em>Rochester's Comic and Pop Culture Convention</em></p>
         <p class="w3-margin-bottom">RocCon is Rochester's version of the hugely popular conventions held in major
@@ -206,90 +206,159 @@
             </div>
             <button class="w3-button w3-padding-large w3-light-grey" style="margin: 16px 0;">LOAD MORE</button>
         </div>
+    </div>
 
-        <hr/>
+    <hr/>
 
-        <div class="w3-display-container">
-            <div class="anchor-point" id="merchants"></div>
-            <div class="parallax-tag pt-top" style="white-space:nowrap;">
+    <div class="w3-display-container">
+        <div class="anchor-point" id="merchants"></div>
+        <div class="parallax-tag pt-top" style="white-space:nowrap;">
                 <span class="w3-center w3-padding-large w3-white w3-xlarge w3-wide">MERCHANT<span
                         class="w3-hide-large w3-hide-medium">S</span><span class="w3-hide-small"> SIGNUP</span></span>
+        </div>
+    </div>
+
+    <div class="w3-content w3-container w3-padding-64">
+        <h3 class="w3-center">SIGNUP FORM</h3>
+        <p class="w3-center"><em>Interested in being a merchant for RocCon?<br> Use the forum below to sign up as a merchant!</em></p><br>
+
+        <form class="w3-panel w3-card" id="merchant_form" action="#">
+            <h2>Merchant Signup</h2>
+
+
+            <div class="w3-row-padding">
+                <div class="w3-half">
+                    <h4>Contact Information</h4>
+                    <div class="w3-row-padding" style="margin:0 -16px;">
+                        <div class="w3-half">
+                            <input required class="w3-input w3-border"
+                                   style="margin: 8px 0 16px 0;"
+                                   type="text" placeholder="First Name">
+                        </div>
+                        <div class="w3-half">
+                            <input name="last_name" required class="w3-input w3-border"
+                                   style="margin: 0 0 16px 0;"
+                                   type="text" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px;">
+                        <div class="w3-half" style="margin-bottom: 16px;">
+                            <input required class="w3-input w3-border" type="email"
+                                   placeholder="Email"
+                                   oninput="form.confirm_email.pattern = escapeRegExp(this.value)">
+                        </div>
+                        <div class="w3-half">
+                            <input required  name="confirm_email" class="w3-input w3-border" type="email" pattern=""
+                                   title="Email address entries do not match!" placeholder="Confirm Email">
+                        </div>
+                    </div>
+                    <h4>What will you be selling?</h4>
+                    <select required  id="merch_type" class="w3-select w3-border">
+                        <option selected disabled value="">Select Merchant Type</option>
+                        <option>Author</option>
+                        <option>Artist</option>
+                        <option>Food</option>
+                        <option>General Merchandise</option>
+                    </select>
+                </div>
+                <div class="w3-half check-group">
+
+                    <h4>Which days will you be attending?</h4>
+                    <p>
+                        <input class="w3-check" id="all_days" type="checkbox">
+                        <label for="all_days">All</label>
+                    </p>
+                    <p>
+                        <input class="w3-check" id="friday" type="checkbox">
+                        <label for="friday">Friday - Sept. 14th</label>
+                    </p>
+                    <p>
+                        <input class="w3-check" id="saturday" type="checkbox">
+                        <label for="saturday">Saturday - Sept. 15th</label>
+                    </p>
+                    <p>
+                        <input class="w3-check" id="sunday" type="checkbox">
+                        <label for="sunday">Sunday - Sept. 16th</label>
+                    </p>
+                </div>
+            </div>
+            <div class="w3-row-padding" style="padding: 0 16px;">
+                        <textarea class="w3-input w3-border" style="margin: 16px 0 8px 0;"
+                                  placeholder="Note any special accommodations here"></textarea>
+            </div>
+            <div class="w3-row-padding w3-section w3-display-container" style="height: 43px;">
+                <button id="merch_register" class="w3-btn w3-display-bottomright w3-red" style="">REGISTER</button>
+            </div>
+        </form>
+    </div>
+
+    <hr/>
+
+    <div class="w3-display-container">
+        <div class="anchor-point" id="contact"></div>
+        <div class="parallax-tag pt-top" style="white-space:nowrap;">
+                <span class="w3-center w3-padding-large w3-white w3-xlarge w3-wide">CONTACT US</span>
+        </div>
+    </div>
+
+    <div class="w3-content w3-container w3-padding-64">
+        <h3 class="w3-center">Contact Information</h3>
+        <p class="w3-center"><em>Have any comments or questions?<br>See our information below or use the form below to send us a message!</em></p>
+
+        <div class="w3-center">
+            <h4>Location</h4>
+            <span>Kodak Theatre & Center</span><br/>
+            <span>200 West Ridge Road</span><br/>
+            <span>Rochester, NY 14615</span>
+        </div>
+
+        <h4 class="w3-center">Social Media</h4>
+        <div class="w3-row-padding">
+            <div class="w3-quarter w3-center w3-margin-bottom">
+                <a href="https://www.facebook.com/roccon.net/" target="_blank" class="fa fa-3x fa-facebook-official"></a>
+            </div>
+            <div class="w3-quarter w3-center w3-margin-bottom">
+                <a href="#" class="fa fa-3x fa-google-plus-square"></a>
+                <span class="w3-show">Coming Soon!</span>
+            </div>
+            <div class="w3-quarter w3-center w3-margin-bottom">
+                <a href="#" class="fa fa-3x fa-instagram"></a>
+                <span class="w3-show">Coming Soon!</span>
+            </div>
+            <div class="w3-quarter w3-center w3-margin-bottom">
+                <a href="#" class="fa fa-3x fa-twitter-square"></a>
+                <span class="w3-show">Coming Soon!</span>
             </div>
         </div>
 
-        <div class="w3-content w3-container w3-padding-64">
-            <h3 class="w3-center">SIGNUP FORM</h3>
-            <p class="w3-center"><em>Interested in being a merchant for RocCon?<br> Use the forum below to sign up as a merchant!</em></p><br>
-
-            <form class="w3-panel w3-card" id="merchant_form" action="#">
-                <h2>Merchant Signup</h2>
 
 
-                <div class="w3-row-padding">
+
+
+        <form class="w3-panel w3-card" id="contact_form" action="#">
+            <h2>Contact Form</h2>
+
+
+            <div class="w3-row-padding">
+                <div class="w3-row-padding" style="margin: 16px 0 8px 0;">
                     <div class="w3-half">
-                        <h4>Contact Information</h4>
-                        <div class="w3-row-padding" style="margin:0 -16px;">
-                            <div class="w3-half">
-                                <input required class="w3-input w3-border"
-                                       style="margin: 8px 0 16px 0;"
-                                       type="text" placeholder="First Name">
-                            </div>
-                            <div class="w3-half">
-                                <input name="last_name" required class="w3-input w3-border"
-                                       style="margin: 0 0 16px 0;"
-                                       type="text" placeholder="Last Name">
-                            </div>
-                        </div>
-                        <div class="w3-row-padding" style="margin:0 -16px 8px -16px;">
-                            <div class="w3-half" style="margin-bottom: 16px;">
-                                <input required class="w3-input w3-border" type="email"
-                                       placeholder="Email"
-                                       oninput="form.confirm_email.pattern = escapeRegExp(this.value)">
-                            </div>
-                            <div class="w3-half">
-                                <input required  name="confirm_email" class="w3-input w3-border" type="email" pattern=""
-                                       title="Email address entries do not match!" placeholder="Confirm Email">
-                            </div>
-                        </div>
-                        <h4>What will you be selling?</h4>
-                        <select required  id="merch_type" class="w3-select w3-border">
-                            <option selected disabled value="">Select Merchant Type</option>
-                            <option>Author</option>
-                            <option>Artist</option>
-                            <option>Food</option>
-                            <option>General Merchandise</option>
-                        </select>
+                        <input name="contact_name" required class="w3-input w3-border"
+                               type="text" placeholder="Name">
                     </div>
-                    <div class="w3-half check-group">
+                    <div class="w3-half">
+                        <input name="return_email" class="w3-input w3-border"
+                               type="email" placeholder="Email">
+                    </div>
+                </div>
 
-                        <h4>Which days will you be attending?</h4>
-                        <p>
-                            <input class="w3-check" id="all_days" type="checkbox">
-                            <label for="all_days">All</label>
-                        </p>
-                        <p>
-                            <input class="w3-check" id="friday" type="checkbox">
-                            <label for="friday">Friday - Sept. 14th</label>
-                        </p>
-                        <p>
-                            <input class="w3-check" id="saturday" type="checkbox">
-                            <label for="saturday">Saturday - Sept. 15th</label>
-                        </p>
-                        <p>
-                            <input class="w3-check" id="sunday" type="checkbox">
-                            <label for="sunday">Sunday - Sept. 16th</label>
-                        </p>
-                    </div>
-                </div>
-                <div class="w3-row-padding" style="padding: 0 16px;">
-                        <textarea class="w3-input w3-border" style="margin: 16px 0 8px 0;"
-                                  placeholder="Note any special accommodations here"></textarea>
-                </div>
-                <div class="w3-row-padding w3-section w3-display-container" style="height: 43px;">
-                    <button id="merch_register" class="w3-btn w3-display-bottomright w3-red" style="">REGISTER</button>
-                </div>
-            </form>
-        </div>
+            <div class="w3-row-padding" style="padding: 0 16px;">
+                        <textarea class="w3-input w3-border" style="margin: 8px 0 8px 0;"
+                                  placeholder="Message"></textarea>
+            </div>
+            <div class="w3-row-padding w3-section w3-display-container" style="height: 43px;">
+                <button id="contact_send" class="w3-btn w3-display-bottomright w3-red" style=""><i class="fa fa-paper-plane"></i> SEND</button>
+            </div>
+        </form>
     </div>
 
     <script>
