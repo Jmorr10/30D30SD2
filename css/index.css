@@ -54,6 +54,27 @@
     background-image: url('../img/sunday.jpg');
 }
 
+.guest-label {
+    margin-bottom: 13px;
+
+    position: relative;
+    top: -3px;
+}
+
+#merchant_form {
+    max-width: 667px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#merch_register {
+    width: 100%;
+    max-width: 143.8px;
+    margin: 0 16px 0 0;
+}
+
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1024px) {
     .bgimg-1, .bgimg-2, .bgimg-3 {
@@ -80,4 +101,19 @@
         opacity: 1.0 !important;
     }
 
+}
+
+@media only screen and (max-device-width: 424px) {
+    #merch_register {
+        left: 0;
+        right: 0;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media only screen and (min-device-width: 601px) {
+    input[name="last_name"] {
+        margin-top: 8px !important;
+    }
 }

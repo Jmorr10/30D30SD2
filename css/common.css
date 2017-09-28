@@ -78,6 +78,51 @@ hr {
     margin: auto;
 }
 
+.check-group > p {
+    margin-left: 16px;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder{ /* Chrome/Opera/Safari */
+    color: #000;
+    opacity: 1;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder{ /* IE */
+    color: #000;
+    opacity: 1;
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder{ /* Edge */
+    color: #000;
+    opacity: 1;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #000;
+    opacity: 1;
+}
+
+.w3-input, .w3-select {
+    border-color: #000;
+}
+
+input:focus, textarea:focus {
+    border: 1px solid black !important;
+    box-shadow: 0 0 3px black !important;
+    -moz-box-shadow: 0 0 3px black !important;
+    -webkit-box-shadow: 0 0 3px black !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline-offset: 0 !important;
+    outline: none !important;
+}
+
+
+
 #myNavbar {
     height: 53px;
     vertical-align: middle;
