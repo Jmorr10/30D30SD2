@@ -15,6 +15,10 @@
 </head>
 
 <body>
+    <!-- TODO: FIX MARGIN AND PADDING ISSUES START AT 601PX (READ MORE FOLD-AWAY MESSED UP) -->
+    <!-- TODO: CLEAN UP HTML. THEN, CONSOLIDATE/CLEAN UP CSS. LAST, JS.-->
+    <!-- TODO: WIRE UP TOGGLING FORM VISIBILITY WITH A BUTTON -->
+
     <div class="w3-top">
         <div class="w3-bar w3-card-4 w3-black" id="myNavbar">
             <a class="w3-bar-item w3-button w3-hover-black w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
@@ -44,14 +48,16 @@
         </div>
     </div>
 
-    <div class="bgimg-1 w3-display-container" id="home"></div>
-    <div class="parallax-tag pt-bottom" style="white-space:nowrap;">
-        <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">RocCon - 2029</span>
+    <div class="bgimg-1" id="home">
+        <div class="parallax-tag pt-bottom" style="white-space:nowrap;">
+            <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">RocCon - 2029</span>
+        </div>
     </div>
 
     <!-- Container (About Section) -->
-    <div class="w3-content w3-container" style="margin-bottom: 64px;" id="about">
-        <h3 class="w3-center">About RocCon</h3>
+    <div class="w3-content w3-container w3-display-container">
+        <div class="anchor-point" id="about" style="top: -48px;"></div>
+        <span id="about-banner" class="w3-center w3-padding-large w3-white w3-xlarge w3-wide w3-show">ABOUT</span>
         <p class="w3-center"><em>Rochester's Comic and Pop Culture Convention</em></p>
         <p class="w3-margin-bottom">RocCon is Rochester's version of the hugely popular conventions held in major
             cities around the globe. Our convention is a family friendly event, featuring guests from the fandoms of
@@ -64,7 +70,7 @@
 
 
         <div class="w3-row">
-            <div class="w3-col m6 w3-center w3-padding-large">
+            <div class="w3-col m6 w3-center">
                 <img src="img/about_pic.jpg" class="w3-round w3-image" alt="Photo of RocCon Poster" width="500" height="333">
             </div>
 
@@ -97,7 +103,7 @@
     <div class="bgimg-2 w3-display-container">
         <div class="anchor-point" id="schedule"></div>
         <div class="parallax-tag pt-top" style="white-space:nowrap;">
-            <span class="w3-center w3-padding-large w3-white w3-xlarge w3-wide">SCHEDULE</span>
+            <span class="w3-center w3-white w3-xlarge w3-wide">SCHEDULE</span>
         </div>
     </div>
 
@@ -119,13 +125,13 @@
             Events
         </div>
     </div>
-
-
-    <div class="w3-content w3-container w3-padding-64">
+    <div class="w3-content w3-container w3-padding-16" style="padding-bottom: 0 !important;">
         <h3 class="w3-center">SCHEDULE OF EVENTS</h3>
-        <p class="w3-center"><em>We have a ton of different panels and events schedule for the convention.<br> Click on a day to view the schedule for that day</em></p><br>
+        <p class="w3-center">
+            <em>We have a ton of different panels and events schedule for the convention.<br> Click on a day to view the schedule for that day</em>
+        </p>
 
-        <div class="w3-row w3-center w3-padding-16">
+        <div id="day_schedules" class="w3-row w3-center">
             <div class="w3-third w3-padding">
                 <div class="w3-card-4 w3-opacity-min w3-hover-opacity-off day-tile friday">
                     <span class="w3-xlarge w3-show w3-center w3-black absolute-center">
@@ -157,12 +163,14 @@
         </div>
     </div>
 
-    <div class="w3-content w3-container w3-padding-64">
+    <div class="w3-content w3-container w3-padding-16" style="padding-bottom: 0 !important;">
         <h3 class="w3-center">GUESTS OF HONOR</h3>
-        <p class="w3-center"><em>RocCon will proudly host some of the most famous names in the industry!<br> Click on a guest to learn more.</em></p><br>
+        <p class="w3-center">
+            <em>RocCon will proudly host some of the most famous names in the industry!<br> Click on a guest to learn more.</em>
+        </p>
 
         <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-        <div class="w3-row-padding w3-center">
+        <div class="w3-row-padding w3-center guests">
             <div class="w3-col m3">
                 <img src="img/guests/barbara_goodson.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Barbara Goodson">
                 <div class="w3-large w3-show w3-center w3-black guest-label">Barbara Goodson</div>
@@ -184,7 +192,7 @@
             </div>
         </div>
 
-        <div class="w3-row-padding w3-center w3-section">
+        <div class="w3-row-padding w3-center w3-section guests" style="margin: 0 !important;">
             <div class="w3-col m3">
                 <img src="img/guests/daisuke_hirakawa.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Daisuke Hirakawa">
                 <div class="w3-large w3-show w3-center w3-black guest-label">Daisuke Hirakawa</div>
@@ -204,25 +212,25 @@
                 <img src="img/guests/long_vo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Long Vo">
                 <div class="w3-large w3-show w3-center w3-black guest-label">Long Vo</div>
             </div>
-            <button class="w3-button w3-padding-large w3-light-grey" style="margin: 16px 0;">LOAD MORE</button>
+            <button class="w3-button w3-padding-large w3-light-grey">LOAD MORE</button>
         </div>
     </div>
 
     <hr/>
 
-    <div class="w3-display-container">
-        <div class="anchor-point" id="merchants"></div>
-        <div class="parallax-tag pt-top" style="white-space:nowrap;">
-                <span class="w3-center w3-padding-large w3-white w3-xlarge w3-wide">MERCHANT<span
-                        class="w3-hide-large w3-hide-medium">S</span><span class="w3-hide-small"> SIGNUP</span></span>
-        </div>
+    <div class="noimg-header" style="white-space:nowrap;">
+        <div class="anchor-point" id="merchants" style="top: -57px"></div>
+        <span class="w3-center w3-white w3-xlarge w3-wide">MERCHANT<span
+                class="w3-hide-large w3-hide-medium">S</span><span class="w3-hide-small"> SIGNUP</span></span>
     </div>
+    <i class="w3-container w3-center fa fa-credit-card fa-5x icon-pic"></i>
+    <div class="w3-content w3-center w3-container">
+        <h3>SIGNUP FORM</h3>
+        <p>
+            <em>Interested in being a merchant for RocCon?<br> Use the forum below to sign up as a merchant!</em>
+        </p>
 
-    <div class="w3-content w3-container w3-padding-64">
-        <h3 class="w3-center">SIGNUP FORM</h3>
-        <p class="w3-center"><em>Interested in being a merchant for RocCon?<br> Use the forum below to sign up as a merchant!</em></p><br>
-
-        <form class="w3-panel w3-card" id="merchant_form" action="#">
+        <form class="w3-panel w3-card w3-hide" id="merchant_form" action="#">
             <h2>Merchant Signup</h2>
 
 
@@ -287,32 +295,35 @@
                                   placeholder="Note any special accommodations here"></textarea>
             </div>
             <div class="w3-row-padding w3-section w3-display-container" style="height: 43px;">
-                <button id="merch_register" class="w3-btn w3-display-bottomright w3-red" style="">REGISTER</button>
+                <button class="w3-btn w3-display-bottomright w3-red submit-form-btn">REGISTER</button>
             </div>
         </form>
+        <button class="w3-btn w3-light-grey w3-center show-form-btn">SIGNUP FORM</button>
     </div>
 
     <hr/>
 
-    <div class="w3-display-container">
-        <div class="anchor-point" id="contact"></div>
-        <div class="parallax-tag pt-top" style="white-space:nowrap;">
-                <span class="w3-center w3-padding-large w3-white w3-xlarge w3-wide">CONTACT US</span>
-        </div>
+    <div class="noimg-header" style="white-space:nowrap;">
+        <div class="anchor-point" id="contact" style="top: -57px"></div>
+        <span class="w3-center w3-white w3-xlarge w3-wide">CONTACT US</span>
     </div>
 
-    <div class="w3-content w3-container w3-padding-64">
-        <h3 class="w3-center">Contact Information</h3>
-        <p class="w3-center"><em>Have any comments or questions?<br>See our information below or use the form below to send us a message!</em></p>
+    <i class="w3-container w3-center fa fa-envelope fa-5x icon-pic"></i>
 
-        <div class="w3-center">
+    <div class="w3-content w3-container w3-center">
+        <h3>Contact Information</h3>
+        <p>
+            <em>Have any comments or questions?<br>See our information below or use the form below to send us a message!</em>
+        </p>
+
+        <div id="location-holder">
             <h4>Location</h4>
             <span>Kodak Theatre & Center</span><br/>
             <span>200 West Ridge Road</span><br/>
             <span>Rochester, NY 14615</span>
         </div>
 
-        <h4 class="w3-center">Social Media</h4>
+        <h4>Social Media</h4>
         <div class="w3-row-padding">
             <div class="w3-quarter w3-center w3-margin-bottom">
                 <a href="https://www.facebook.com/roccon.net/" target="_blank" class="fa fa-3x fa-facebook-official"></a>
@@ -331,15 +342,11 @@
             </div>
         </div>
 
-
-
-
-
         <form class="w3-panel w3-card" id="contact_form" action="#">
             <h2>Contact Form</h2>
 
 
-            <div class="w3-row-padding">
+            <div class="w3-row">
                 <div class="w3-row-padding" style="margin: 16px 0 8px 0;">
                     <div class="w3-half">
                         <input name="contact_name" required class="w3-input w3-border"
@@ -350,16 +357,134 @@
                                type="email" placeholder="Email">
                     </div>
                 </div>
-
-            <div class="w3-row-padding" style="padding: 0 16px;">
-                        <textarea class="w3-input w3-border" style="margin: 8px 0 8px 0;"
+            </div>
+            <div class="w3-row" style="padding: 0 16px;">
+                        <textarea class="w3-input w3-border" style="margin: 8px 0 0 0;"
                                   placeholder="Message"></textarea>
             </div>
             <div class="w3-row-padding w3-section w3-display-container" style="height: 43px;">
-                <button id="contact_send" class="w3-btn w3-display-bottomright w3-red" style=""><i class="fa fa-paper-plane"></i> SEND</button>
+                <button class="w3-btn w3-display-bottomright w3-red submit-form-btn"><i class="fa fa-paper-plane"></i> SEND</button>
             </div>
         </form>
     </div>
+
+    <hr/>
+
+
+    <div class="noimg-header" style="white-space:nowrap;">
+        <!-- TODO: FIX THIS AFTER ADDING FOOTER CONTENT! -->
+        <div class="anchor-point" id="tickets" style="top: -57px"></div>
+        <span class="w3-center w3-white w3-xlarge w3-wide">GET TICKETS</span>
+    </div>
+
+    <i class="w3-container w3-center fa fa-ticket fa-5x icon-pic"></i>
+
+    <div class="w3-content w3-center w3-container">
+        <h3>Sorry...</h3>
+        <p>
+            <em>Tickets aren't on sale quite yet, but we ask that you use the form below to RSVP so that we know how many
+        people to expect. Don't worry if your plans aren't set in stone; we just need a rough estimate. We'll send you
+        an email to let you know when tickets go on sale!</em>
+        </p>
+
+        <form class="w3-panel w3-card w3-hide" id="tickets_form" action="#">
+            <h2>Ticket RSVP</h2>
+
+            <div class="w3-row-padding">
+                <div class="w3-half">
+                    <h4>Contact Information</h4>
+                    <div class="w3-row-padding" style="margin:0 -16px;">
+                        <div class="w3-half">
+                            <input required class="w3-input w3-border"
+                                   style="margin: 8px 0 16px 0;"
+                                   type="text" placeholder="Name">
+                        </div>
+                        <div class="w3-half">
+                            <input name="num_attending" required class="w3-input w3-border"
+                                   style="margin: 0 0 16px 0;" min="1"
+                                   type="number" placeholder="# Attending">
+                        </div>
+                    </div>
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px;">
+                        <div class="w3-half" style="margin-bottom: 16px;">
+                            <input required class="w3-input w3-border" type="email"
+                                   placeholder="Email"
+                                   oninput="form.confirm_email.pattern = escapeRegExp(this.value)">
+                        </div>
+                        <div class="w3-half">
+                            <input required  name="confirm_email" class="w3-input w3-border" type="email" pattern=""
+                                   title="Email address entries do not match!" placeholder="Confirm Email">
+                        </div>
+                    </div>
+                    <div class="check-group">
+
+                        <h4>Which days will you be attending?</h4>
+                        <p>
+                            <input class="w3-check" id="fan_all_days" type="checkbox">
+                            <label for="fan_all_days">All</label>
+                        </p>
+                        <p>
+                            <input class="w3-check" id="fan_friday" type="checkbox">
+                            <label for="fan_friday">Friday - Sept. 14th</label>
+                        </p>
+                        <p>
+                            <input class="w3-check" id="fan_saturday" type="checkbox">
+                            <label for="fan_saturday">Saturday - Sept. 15th</label>
+                        </p>
+                        <p>
+                            <input class="w3-check" id="fan_sunday" type="checkbox">
+                            <label for="fan_sunday">Sunday - Sept. 16th</label>
+                        </p>
+                    </div>
+                </div>
+                <div class="w3-half check-group">
+                    <div class="check-group">
+                        <h4>Which types of events are you going to attend?</h4>
+                        <p>
+                            <input class="w3-check" id="all_events" type="checkbox">
+                            <label for="all_events">All Events</label>
+                        </p>
+                        <p>
+                            <input class="w3-check" id="amv_contest" type="checkbox">
+                            <label for="friday">AMV Contest</label>
+                        </p>
+                        <p>
+                            <input class="w3-check" id="autograph_booths" type="checkbox">
+                            <label for="autograph_booths">Autograph Booths</label>
+                        </p>
+                        <p>
+                            <input class="w3-check" id="cosplay_contest" type="checkbox">
+                            <label for="cosplay_contest">Cosplay Contest</label>
+                        </p>
+                        <p>
+                            <input class="w3-check" id="dealers_room" type="checkbox">
+                            <label for="dealers_room">Dealers Room</label>
+                        </p>
+                        <p>
+                            <input class="w3-check" id="screenings" type="checkbox">
+                            <label for="screenings">Screenings</label>
+                        </p>
+                        <p>
+                            <input class="w3-check" id="skill_workshops" type="checkbox">
+                            <label for="skill_workshops">Skill Workshops</label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-row-padding" style="padding: 0 16px;">
+                        <textarea class="w3-input w3-border" style="margin: 16px 0 8px 0;"
+                                  placeholder="Note any special requests, comments, etc. here"></textarea>
+            </div>
+            <div class="w3-row-padding w3-section w3-display-container" style="height: 43px;">
+                <button class="w3-btn w3-display-bottomright w3-red submit-form-btn" style="">SUBMIT</button>
+            </div>
+        </form>
+        <button class="w3-btn w3-light-grey w3-center show-form-btn">RSVP FORM</button>
+    </div>
+
+    <footer class="w3-bar w3-card-4 w3-black">
+        <span>© 2017 Joseph Morris. All Rights Reserved.</span>
+    </footer>
 
     <script>
         // Neat idea for validating fields that should be identical (i.e., confirmation fields)

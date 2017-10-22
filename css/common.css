@@ -9,6 +9,12 @@ body, html {
 
     color: #000;
     line-height: 1.8;
+
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0 0 16px 0;
 }
 
 .w3-bar {
@@ -31,8 +37,20 @@ body, html {
     left:0;
 }
 
+.parallax-tag > span {
+    padding: 0 0 16px 0 !important;
+}
+
+.parallax-tag.pt-top > span {
+    padding: 0 0 3px 0 !important;
+}
+
+.parallax-tag.pt-bottom > span {
+    padding: 16px 0 !important;
+}
+
 .pt-top {
-    top:0;
+    top: -13px;
 }
 
 .pt-bottom {
@@ -45,7 +63,7 @@ body, html {
 
 .read-more {
     line-height: 1;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
 }
 
 .anchor-point {
@@ -53,7 +71,7 @@ body, html {
     height: 0;
 
     position: absolute;
-    top: -53px;
+    top: -69px;
 }
 
 a.fa {
@@ -62,7 +80,7 @@ a.fa {
 
 hr {
     height: 1px;
-    margin: 7.5px 0;
+    margin: 16px 0;
 
     background: #333;
     background: -webkit-gradient(linear, left top, right top, color-stop(0%,hsla(0,0%,0%,0)), color-stop(50%,hsla(0,0%,0%,.75)), color-stop(100%,hsla(0,0%,0%,0)));
@@ -86,6 +104,7 @@ hr {
 
 .check-group > p {
     margin-left: 16px;
+    text-align: left;
 }
 
 input::-webkit-input-placeholder,
@@ -127,11 +146,27 @@ input:focus, textarea:focus, select:focus {
     outline: none !important;
 }
 
-
-
-#myNavbar {
+#myNavbar, footer {
     height: 53px;
     vertical-align: middle;
     display: table-cell;
-    width: 100vw;
+    width: 100vw !important;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.noimg-header {
+    position: relative;
+    margin-top: -12px;
+    padding: 0 16px;
+}
+
+.noimg-header > span {
+    display: block;
+    padding: 0 !important;
 }

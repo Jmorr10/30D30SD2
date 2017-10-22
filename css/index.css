@@ -4,6 +4,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
 
 /* First image (Logo. Full height) */
@@ -13,9 +14,41 @@
     min-height: 100%;
 }
 
-#about {
-    padding-top: 53px;
+#about-banner {
+    line-height: 1.5;
+    padding: 0 !important;
+    margin: 16px 0;
 }
+
+#location-holder {
+    margin-bottom: 16px;
+    border-bottom: 1px solid black;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 16px;
+}
+
+#location-holder > h4 {
+    border-bottom: 1px solid #000;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#day_schedules > .w3-padding {
+    padding: 8px 0 !important;
+}
+
+.guests {
+    padding: 0;
+}
+
+.guests .w3-col.m3 {
+    padding: 0;
+}
+
+
 
 /* Second image (Portfolio) */
 .bgimg-2 {
@@ -27,6 +60,12 @@
 .bgimg-3 {
     background-image: url('../img/guests_pic.jpg');
     min-height: 400px;
+}
+
+.icon-pic {
+    display: flex;
+    justify-content: center;
+    padding: 16px 16px 0 16px;
 }
 
 .w3-wide {letter-spacing: 10px;}
@@ -58,21 +97,28 @@
     margin-bottom: 13px;
 
     position: relative;
-    top: -3px;
+    top: -4px;
 }
 
-#merchant_form, #contact_form {
+form {
     max-width: 667px;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 0 !important;
+    text-align: left;
 }
 
-#merch_register, #contact_send {
+.submit-form-btn {
     width: 100%;
     max-width: 143.8px;
     margin: 0 16px 0 0;
+}
+
+.show-form-btn {
+    width: 100%;
+    max-width: 143.8px;
 }
 
 /* Turn off parallax scrolling for tablets and phones */
@@ -82,7 +128,7 @@
     }
 
     .bgimg-1 {
-        min-height: calc(100vh - 53px);
+        min-height: calc(100vh - 56px);
         background-position-y: 0;
     }
 
@@ -104,7 +150,7 @@
 }
 
 @media only screen and (max-device-width: 424px) {
-    #merch_register, #contact_send {
+    .submit-form-btn {
         left: 0;
         right: 0;
         margin-right: auto;
@@ -113,7 +159,8 @@
 }
 
 @media only screen and (min-device-width: 601px) {
-    input[name="last_name"] {
+    /* TODO: THIS CAN PROBABLY BE REWRITTEN TO BE MORE EFFICIENT... */
+    input[name="last_name"], input[name="num_attending"] {
         margin-top: 8px !important;
     }
 }
