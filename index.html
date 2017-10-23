@@ -9,15 +9,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
 
 </head>
 
 <body>
-    <!-- TODO: FIX MARGIN AND PADDING ISSUES START AT 601PX (READ MORE FOLD-AWAY MESSED UP) -->
-    <!-- TODO: CLEAN UP HTML. THEN, CONSOLIDATE/CLEAN UP CSS. LAST, JS.-->
-    <!-- TODO: WIRE UP TOGGLING FORM VISIBILITY WITH A BUTTON -->
+    <!-- TODO: CONSIDER SPLITTING ABOUT SECTION 1/2 and 1/2 (PICTURE AND TEXT) -->
+    <!-- TODO: JAVASCRIPT - MENU BUTTON -->
+    <!-- TODO: JAVASCRIPT - SHOW SEARCH BOX (upon submission, alert saying not functional) -->
+    <!-- TODO: JAVASCRIPT - SCHEDULE MODAL -->
+    <!-- TODO: JAVASCRIPT - FORM MODAL -->
+    <!-- TODO: JAVASCRIPT - GUEST INFORMATION MODAL -->
+    <!-- TODO: JAVASCRIPT - READ MORE BUTTON -->
+    <!-- TODO: JAVASCRIPT - LOAD MORE GUESTS BUTTON (simply add element saying "Sorry! No more guests to show at the moment!") -->
 
     <div class="w3-top">
         <div class="w3-bar w3-card-4 w3-black" id="myNavbar">
@@ -67,16 +71,16 @@
             <span class="w3-hide-medium w3-hide-large w3-mobile w3-center read-more"><br/><a href="#">READ MORE</a></span>
         </p>
 
-
-
         <div class="w3-row">
-            <div class="w3-col m6 w3-center">
+            <div class="w3-col m12 w3-center">
                 <img src="img/about_pic.jpg" class="w3-round w3-image" alt="Photo of RocCon Poster" width="500" height="333">
             </div>
+        </div>
 
+        <div class="w3-row w3-hide-small" style="margin-top:16px;">
             <!-- Hide this text on small devices -->
-            <div class="about-wrap-container w3-col m6 w3-hide-small w3-padding-large">
-                <p style="margin-top:0;">All of ours rooms are filled with all kinds of programming. You'll get a program when you arrive. We
+            <div class="w3-col m12">
+                <p>All of ours rooms are filled with all kinds of programming. You'll get a program when you arrive. We
                     also put the program up shortly before each year's convention so you can plan ahead for what you'd
                     like to do, who you want to see, and when to hit the food truck rodeo. Plan ahead so that you don't
                     miss a moment of the cosplay contest in the big theatre!</p>
@@ -85,7 +89,7 @@
                     people who come in to do programming for the event. In addition, the food truck rodeo is legendary!
                     When you've worked up an appetite, head out to the side of the venue for choices from pretty much
                     every continent!</p>
-                <p class="about-wrap">At RocCon, there's something for everyone. We have: four floors of fandom fun, two big dealers rooms,
+                <p style="margin-bottom: 0;">At RocCon, there's something for everyone. We have: four floors of fandom fun, two big dealers rooms,
                     a cosplay contest with prizes each day of the show, four event rooms, and a huge theatre for our
                     main events! Programming covers all ages and interests: drawing, writing, superheroes, sci-fi, comic
                     books, gaming, and anime. Everyone is invited to come play in the RocCon Sandbox! The show is
@@ -98,7 +102,8 @@
 
 
     <hr/>
-    <!-- Second Parallax Image with Portfolio Text -->
+
+    <!-- Second Parallax Image with Schedule Information -->
 
     <div class="bgimg-2 w3-display-container">
         <div class="anchor-point" id="schedule"></div>
@@ -132,19 +137,19 @@
         </p>
 
         <div id="day_schedules" class="w3-row w3-center">
-            <div class="w3-third w3-padding">
+            <div class="w3-third">
                 <div class="w3-card-4 w3-opacity-min w3-hover-opacity-off day-tile friday">
                     <span class="w3-xlarge w3-show w3-center w3-black absolute-center">
                         FRIDAY</span>
                 </div>
             </div>
-            <div class="w3-third w3-padding">
+            <div class="w3-third">
                 <div class="w3-card-4 w3-opacity-min w3-hover-opacity-off day-tile saturday">
                     <span class="w3-xlarge w3-show w3-center w3-black absolute-center">
                         SATURDAY</span>
                 </div>
             </div>
-            <div class="w3-third w3-padding">
+            <div class="w3-third">
                 <div class="w3-card-4 w3-black w3-opacity-min w3-hover-opacity-off day-tile sunday">
                     <span class="w3-xlarge w3-show w3-center w3-black absolute-center">
                         SUNDAY</span>
@@ -154,7 +159,8 @@
     </div>
 
     <hr/>
-    <!-- Third Parallax Image - Guests -->
+
+    <!-- Third Parallax Image - Guest Information -->
 
     <div class="bgimg-3 w3-display-container">
         <div class="anchor-point" id="guests"></div>
@@ -166,57 +172,73 @@
     <div class="w3-content w3-container w3-padding-16" style="padding-bottom: 0 !important;">
         <h3 class="w3-center">GUESTS OF HONOR</h3>
         <p class="w3-center">
-            <em>RocCon will proudly host some of the most famous names in the industry!<br> Click on a guest to learn more.</em>
+            <em>RocCon will proudly host some of the most famous names in the industry!</em>
+        </p>
+        <p class="w3-center">
+            <em>Click on a guest to learn more.</em>
         </p>
 
-        <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+        <!-- Responsive Grid. Will stack on mobile devices/small screens (100% width) -->
         <div class="w3-row-padding w3-center guests">
-            <div class="w3-col m3">
-                <img src="img/guests/barbara_goodson.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Barbara Goodson">
-                <div class="w3-large w3-show w3-center w3-black guest-label">Barbara Goodson</div>
+
+            <div class="w3-col m6">
+                <div class="w3-col m6 nested">
+                    <img src="img/guests/barbara_goodson.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Barbara Goodson">
+                    <div class="w3-large w3-show w3-center w3-black guest-label">Barbara Goodson</div>
+                </div>
+
+                <div class="w3-col m6 nested">
+                    <img src="img/guests/charlet_chung.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Charlet Chung">
+                    <div class="w3-large w3-show w3-center w3-black guest-label">Charlet Chung</div>
+                </div>
             </div>
 
-            <div class="w3-col m3">
-                <img src="img/guests/charlet_chung.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Charlet Chung">
-                <div class="w3-large w3-show w3-center w3-black guest-label">Charlet Chung</div>
-            </div>
+            <div class="w3-col m6">
+                <div class="w3-col m6 nested">
+                    <img src="img/guests/chris_jai_alex.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Chris Jai Alex">
+                    <div class="w3-large w3-show w3-center w3-black guest-label">Chris Jai Alex</div>
+                </div>
 
-            <div class="w3-col m3">
-                <img src="img/guests/chris_jai_alex.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Chris Jai Alex">
-                <div class="w3-large w3-show w3-center w3-black guest-label">Chris Jai Alex</div>
-            </div>
-
-            <div class="w3-col m3">
-                <img src="img/guests/courtenay_taylor.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Courtenay Taylor">
-                <div class="w3-large w3-show w3-center w3-black guest-label">Courtenay Taylor</div>
+                <div class="w3-col m6 nested">
+                    <img src="img/guests/courtenay_taylor.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Courtenay Taylor">
+                    <div class="w3-large w3-show w3-center w3-black guest-label">Courtenay Taylor</div>
+                </div>
             </div>
         </div>
 
         <div class="w3-row-padding w3-center w3-section guests" style="margin: 0 !important;">
-            <div class="w3-col m3">
-                <img src="img/guests/daisuke_hirakawa.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Daisuke Hirakawa">
-                <div class="w3-large w3-show w3-center w3-black guest-label">Daisuke Hirakawa</div>
+
+            <div class="w3-col m6">
+                <div class="w3-col m6 nested">
+                    <img src="img/guests/daisuke_hirakawa.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Daisuke Hirakawa">
+                    <div class="w3-large w3-show w3-center w3-black guest-label">Daisuke Hirakawa</div>
+                </div>
+
+                <div class="w3-col m6 nested">
+                    <img src="img/guests/kimberly_brooks.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Kimberly Brooks">
+                    <div class="w3-large w3-show w3-center w3-black guest-label">Kimberly Brooks</div>
+                </div>
             </div>
 
-            <div class="w3-col m3">
-                <img src="img/guests/kimberly_brooks.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Kimberly Brooks">
-                <div class="w3-large w3-show w3-center w3-black guest-label">Kimberly Brooks</div>
+            <div class="w3-col m6">
+                <div class="w3-col m6 nested">
+                    <img src="img/guests/kyle_hebert.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Kyle Hebert">
+                    <div class="w3-large w3-show w3-center w3-black guest-label">Kyle Hebert</div>
+                </div>
+
+                <div class="w3-col m6 nested">
+                    <img src="img/guests/long_vo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Long Vo">
+                    <div class="w3-large w3-show w3-center w3-black guest-label">Long Vo</div>
+                </div>
             </div>
 
-            <div class="w3-col m3">
-                <img src="img/guests/kyle_hebert.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Kyle Hebert">
-                <div class="w3-large w3-show w3-center w3-black guest-label">Kyle Hebert</div>
-            </div>
-
-            <div class="w3-col m3">
-                <img src="img/guests/long_vo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Long Vo">
-                <div class="w3-large w3-show w3-center w3-black guest-label">Long Vo</div>
-            </div>
             <button class="w3-button w3-padding-large w3-light-grey">LOAD MORE</button>
         </div>
     </div>
 
     <hr/>
+
+    <!-- Merchant Section -->
 
     <div class="noimg-header" style="white-space:nowrap;">
         <div class="anchor-point" id="merchants" style="top: -57px"></div>
@@ -303,6 +325,8 @@
 
     <hr/>
 
+    <!-- Contact Section -->
+
     <div class="noimg-header" style="white-space:nowrap;">
         <div class="anchor-point" id="contact" style="top: -57px"></div>
         <span class="w3-center w3-white w3-xlarge w3-wide">CONTACT US</span>
@@ -370,9 +394,9 @@
 
     <hr/>
 
+    <!-- Tickets Section -->
 
     <div class="noimg-header" style="white-space:nowrap;">
-        <!-- TODO: FIX THIS AFTER ADDING FOOTER CONTENT! -->
         <div class="anchor-point" id="tickets" style="top: -57px"></div>
         <span class="w3-center w3-white w3-xlarge w3-wide">GET TICKETS</span>
     </div>
@@ -482,11 +506,15 @@
         <button class="w3-btn w3-light-grey w3-center show-form-btn">RSVP FORM</button>
     </div>
 
+    <!-- Footer -->
+
     <footer class="w3-bar w3-card-4 w3-black">
         <span>© 2017 Joseph Morris. All Rights Reserved.</span>
     </footer>
 
     <script>
+
+        // TODO: THIS CAN BE MOVED TO A SEPARATE JS FILE ONCE ALL JS IS WRITTEN
         // Neat idea for validating fields that should be identical (i.e., confirmation fields)
         // Borrowed from https://stackoverflow.com/a/26439639
         function escapeRegExp(str) {

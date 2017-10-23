@@ -1,3 +1,132 @@
+body,h1,h2,h3,h4,h5,h6 {
+    font-family:Lato, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin:0 0 16px;
+}
+
+body,html {
+    color:#000;
+    height:100%;
+    line-height:1.8;
+    overflow-x:hidden;
+}
+
+.w3-bar {
+    background-color:#000;
+    color:#FFF;
+}
+
+.w3-bar .w3-bar-item {
+    margin:5px;
+    padding:5px 16px;
+}
+
+.w3-bar-item .fa {
+    margin-right:3px;
+}
+
+.parallax-tag {
+    left:0;
+    position:absolute;
+    right:0;
+}
+
+.parallax-tag > span {
+    display:block;
+    padding:0 0 16px!important;
+}
+
+.parallax-tag.pt-top > span {
+    padding:0 0 3px!important;
+}
+
+.parallax-tag.pt-bottom > span {
+    padding:16px 0!important;
+}
+
+.pt-top {
+    top:-13px;
+}
+
+.pt-bottom {
+    bottom:0;
+}
+
+.read-more {
+    line-height:1;
+    margin-bottom:16px;
+}
+
+.anchor-point {
+    height:0;
+    position:absolute;
+    top:-69px;
+    width:100vw;
+}
+
+a.fa {
+    text-decoration:none;
+}
+
+hr {
+    background: #333;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, hsla(0, 0%, 0%, 0)), color-stop(50%, hsla(0, 0%, 0%, .75)), color-stop(100%, hsla(0, 0%, 0%, 0)));
+    background: -webkit-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, .75) 50%, hsla(0, 0%, 0%, 0) 100%);
+    background: -moz-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, .75) 50%, hsla(0, 0%, 0%, 0) 100%);
+    background: -ms-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, .75) 50%, hsla(0, 0%, 0%, 0) 100%);
+    background: -o-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, .75) 50%, hsla(0, 0%, 0%, 0) 100%);
+    background: linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, .75) 50%, hsla(0, 0%, 0%, 0) 100%);
+
+    border: 0;
+    height: 1px;
+    margin: 16px 0;
+}
+
+.absolute-center {
+    bottom:0;
+    left:0;
+    margin:auto;
+    position:absolute;
+    right:0;
+    top:0;
+}
+
+.check-group > p {
+    margin-left:16px;
+    text-align:left;
+}
+
+.w3-input,.w3-select {
+    border-color:#000;
+}
+
+#myNavbar,footer {
+    display:table-cell;
+    height:53px;
+    vertical-align:middle;
+    width:100vw!important;
+}
+
+footer {
+    align-items:center;
+    display:flex;
+    justify-content:center;
+    margin-top:16px;
+}
+
+.noimg-header {
+    margin-top:-12px;
+    padding:0 16px;
+    position:relative;
+}
+
+.noimg-header > span {
+    display:block;
+    padding:0!important;
+}
+
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
     background-attachment: fixed;
@@ -14,67 +143,70 @@
     min-height: 100%;
 }
 
+.bgimg-2 {
+    background-image: url('../img/schedule_pic.jpg');
+    min-height: 400px;
+}
+
+.bgimg-3 {
+    background-image: url('../img/guests_pic.jpg');
+    min-height: 400px;
+}
+
 #about-banner {
     line-height: 1.5;
-    padding: 0 !important;
     margin: 16px 0;
+    padding: 0 !important;
 }
 
 #location-holder {
+    border-bottom: 1px solid #000;
     margin-bottom: 16px;
-    border-bottom: 1px solid black;
-    max-width: 320px;
     margin-left: auto;
     margin-right: auto;
+    max-width: 320px;
     padding-bottom: 16px;
 }
 
 #location-holder > h4 {
     border-bottom: 1px solid #000;
-    max-width: 320px;
     margin-left: auto;
     margin-right: auto;
+    max-width: 320px;
 }
 
-#day_schedules > .w3-padding {
-    padding: 8px 0 !important;
+#day_schedules {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#day_schedules > div {
+    padding: 8px 0;
 }
 
 .guests {
     padding: 0;
 }
 
-.guests .w3-col.m3 {
-    padding: 0;
-}
-
-
-
-/* Second image (Portfolio) */
-.bgimg-2 {
-    background-image: url('../img/schedule_pic.jpg');
-    min-height: 400px;
-}
-
-/* Third image (Contact) */
-.bgimg-3 {
-    background-image: url('../img/guests_pic.jpg');
-    min-height: 400px;
-}
-
 .icon-pic {
     display: flex;
     justify-content: center;
-    padding: 16px 16px 0 16px;
+    padding: 16px 16px 0;
 }
 
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
+.w3-wide {
+    letter-spacing: 10px;
+}
+
+.w3-hover-opacity {
+    cursor: pointer;
+}
 
 .day-tile {
+    cursor: pointer;
     height:200px;
     position: relative;
-    cursor: pointer;
 }
 
 .day-tile > span {
@@ -95,30 +227,29 @@
 
 .guest-label {
     margin-bottom: 13px;
-
     position: relative;
     top: -4px;
 }
 
 form {
-    max-width: 667px;
-    left: 0;
-    right: 0;
+    left:0;
+    margin-bottom: 0 !important;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 0 !important;
+    max-width: 667px;
+    right: 0;
     text-align: left;
 }
 
 .submit-form-btn {
-    width: 100%;
-    max-width: 143.8px;
     margin: 0 16px 0 0;
+    max-width: 143.8px;
+    width: 100%;
 }
 
 .show-form-btn {
-    width: 100%;
     max-width: 143.8px;
+    width: 100%;
 }
 
 /* Turn off parallax scrolling for tablets and phones */
@@ -128,45 +259,109 @@ form {
     }
 
     .bgimg-1 {
-        min-height: calc(100vh - 56px);
         background-position-y: 0;
-    }
-
-    .about-wrap-container {
-        position: relative;
-        margin-bottom: 177px;
-    }
-
-    .about-wrap {
-        position: absolute;
-        margin: 0;
-        left: -100%;
     }
 
     .day-tile {
         opacity: 1.0 !important;
     }
-
 }
 
 @media only screen and (max-device-width: 424px) {
     .submit-form-btn {
         left: 0;
-        right: 0;
-        margin-right: auto;
         margin-left: auto;
+        margin-right: auto;
+        right: 0;
     }
 }
 
-@media only screen and (min-device-width: 601px) {
-    /* TODO: THIS CAN PROBABLY BE REWRITTEN TO BE MORE EFFICIENT... */
-    input[name="last_name"], input[name="num_attending"] {
-        margin-top: 8px !important;
+@media only screen and (min-device-width: 440px) {
+    .guests:last-child > .w3-col:last-of-type > .nested {
+        padding-bottom:16px;
     }
+
+    .guests .nested {
+        padding: 8px;
+    }
+
+    .guest-label {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (min-device-width: 440px) and (max-device-width: 759px) {
+    .guests .w3-col:not(.nested) {
+        width: 100% !important;
+    }
+
+    .guests .nested {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-device-width: 550px) {
+
+    #day_schedules {
+        flex-direction: row;
+    }
+
+    #day_schedules > div {
+        padding: 8px !important;
+    }
+
 }
 
 @media only screen and (max-device-width: 601px) {
     input[name="contact_name"] {
         margin-bottom: 16px;
     }
+}
+
+@media only screen and (min-device-width: 601px) {
+    input[name="last_name"], input[name="num_attending"] {
+        margin-top: 8px !important;
+    }
+}
+
+@media only screen and (min-device-width: 760px) {
+    .guests .w3-col:not(.nested) {
+        padding: 0;
+    }
+}
+
+/* UTILITY CSS */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #000;
+    opacity: 1;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder { /* IE */
+    color: #000;
+    opacity: 1;
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder { /* Edge */
+    color: #000;
+    opacity: 1;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #000;
+    opacity: 1;
+}
+
+input:focus, textarea:focus {
+    border: 1px solid black !important;
+    box-shadow: 0 0 3px black !important;
+    -moz-box-shadow: 0 0 3px black !important;
+    -webkit-box-shadow: 0 0 3px black !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none !important;
+    outline-offset: 0 !important;
 }
