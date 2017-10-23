@@ -1,73 +1,72 @@
-body,h1,h2,h3,h4,h5,h6 {
-    font-family:Lato, sans-serif;
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: Lato, sans-serif;
 }
 
-h1,h2,h3,h4,h5,h6,p {
-    margin:0 0 16px;
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0 0 16px;
 }
 
-body,html {
-    color:#000;
-    height:100%;
-    line-height:1.8;
-    overflow-x:hidden;
+body, html {
+    color: #000;
+    height: 100%;
+    line-height: 1.8;
+    overflow-x: hidden;
 }
 
 .w3-bar {
-    background-color:#000;
-    color:#FFF;
+    background-color: #000;
+    color: #FFF;
 }
 
 .w3-bar .w3-bar-item {
-    margin:5px;
-    padding:5px 16px;
+    margin: 5px;
+    padding: 5px 16px;
 }
 
 .w3-bar-item .fa {
-    margin-right:3px;
+    margin-right: 3px;
 }
 
 .parallax-tag {
-    left:0;
-    position:absolute;
-    right:0;
+    left: 0;
+    position: absolute;
+    right: 0;
 }
 
 .parallax-tag > span {
-    display:block;
-    padding:0 0 16px!important;
+    display: block;
+    padding: 0 0 16px!important;
 }
 
 .parallax-tag.pt-top > span {
-    padding:0 0 3px!important;
+    padding: 0 0 3px!important;
 }
 
 .parallax-tag.pt-bottom > span {
-    padding:16px 0!important;
+    padding: 16px 0!important;
 }
 
 .pt-top {
-    top:-13px;
+    top: -13px;
 }
 
 .pt-bottom {
-    bottom:0;
+    bottom: 0;
 }
 
 .read-more {
-    line-height:1;
-    margin-bottom:16px;
+    line-height: 1;
 }
 
 .anchor-point {
-    height:0;
-    position:absolute;
-    top:-69px;
-    width:100vw;
+    height: 0;
+    position: absolute;
+    top: -69px;
+    width: 100vw;
 }
 
 a.fa {
-    text-decoration:none;
+    text-decoration: none;
 }
 
 hr {
@@ -85,46 +84,46 @@ hr {
 }
 
 .absolute-center {
-    bottom:0;
-    left:0;
-    margin:auto;
-    position:absolute;
-    right:0;
-    top:0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .check-group > p {
-    margin-left:16px;
-    text-align:left;
+    margin-left: 16px;
+    text-align: left;
 }
 
-.w3-input,.w3-select {
-    border-color:#000;
+.w3-input, .w3-select {
+    border-color: #000;
 }
 
-#myNavbar,footer {
-    display:table-cell;
-    height:53px;
-    vertical-align:middle;
-    width:100vw!important;
+#navbar, footer {
+    display: table-cell;
+    height: 53px;
+    vertical-align: middle;
+    width: 100vw !important;
 }
 
 footer {
-    align-items:center;
-    display:flex;
-    justify-content:center;
-    margin-top:16px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
 }
 
 .noimg-header {
-    margin-top:-12px;
-    padding:0 16px;
-    position:relative;
+    margin-top: -12px;
+    padding: 0 16px;
+    position: relative;
 }
 
 .noimg-header > span {
-    display:block;
-    padding:0!important;
+    display: block;
+    padding: 0 !important;
 }
 
 /* Create a Parallax Effect */
@@ -153,13 +152,17 @@ footer {
     min-height: 400px;
 }
 
-#about-banner {
+#about_banner {
     line-height: 1.5;
     margin: 16px 0;
     padding: 0 !important;
 }
 
-#location-holder {
+#about_intro {
+    margin-bottom: 0 !important;
+}
+
+#location_holder {
     border-bottom: 1px solid #000;
     margin-bottom: 16px;
     margin-left: auto;
@@ -168,7 +171,7 @@ footer {
     padding-bottom: 16px;
 }
 
-#location-holder > h4 {
+#location_holder > h4 {
     border-bottom: 1px solid #000;
     margin-left: auto;
     margin-right: auto;
@@ -321,6 +324,16 @@ form {
 @media only screen and (min-device-width: 601px) {
     input[name="last_name"], input[name="num_attending"] {
         margin-top: 8px !important;
+    }
+
+    #about_img {
+        float: left;
+        margin-right: 16px;
+        max-width: 400px;
+    }
+
+    #about_intro {
+        margin-bottom: 16px !important;
     }
 }
 

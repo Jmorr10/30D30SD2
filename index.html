@@ -24,7 +24,7 @@
     <!-- TODO: JAVASCRIPT - LOAD MORE GUESTS BUTTON (simply add element saying "Sorry! No more guests to show at the moment!") -->
 
     <div class="w3-top">
-        <div class="w3-bar w3-card-4 w3-black" id="myNavbar">
+        <div class="w3-bar w3-card-4 w3-black" id="navbar">
             <a class="w3-bar-item w3-button w3-hover-black w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
                 <i class="fa fa-bars"></i>
             </a>
@@ -41,7 +41,7 @@
         </div>
 
         <!-- Navbar on small screens -->
-        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large">
+        <div id="navmenu" class="w3-bar-block w3-white w3-hide w3-hide-large">
             <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
             <a href="#schedule" class="w3-bar-item w3-button" onclick="toggleFunction()">SCHEDULE</a>
             <a href="#guests" class="w3-bar-item w3-button" onclick="toggleFunction()">GUESTS</a>
@@ -61,35 +61,31 @@
     <!-- Container (About Section) -->
     <div class="w3-content w3-container w3-display-container">
         <div class="anchor-point" id="about" style="top: -48px;"></div>
-        <span id="about-banner" class="w3-center w3-padding-large w3-white w3-xlarge w3-wide w3-show">ABOUT</span>
+        <span id="about_banner" class="w3-center w3-padding-large w3-white w3-xlarge w3-wide w3-show">ABOUT</span>
         <p class="w3-center"><em>Rochester's Comic and Pop Culture Convention</em></p>
-        <p class="w3-margin-bottom">RocCon is Rochester's version of the hugely popular conventions held in major
-            cities around the globe. Our convention is a family friendly event, featuring guests from the fandoms of
-            comic books,  sci-fi, anime, and gaming (including TCG). RocCon is the creation of a longtime fan of
-            everything pop culture, who realized in 2009 that Rochester didn't have a "comic-con". RocCon was established
-            in 2010, and we've held the convention annually each September ever since.
-            <span class="w3-hide-medium w3-hide-large w3-mobile w3-center read-more"><br/><a href="#">READ MORE</a></span>
-        </p>
 
-        <div class="w3-row">
-            <div class="w3-col m12 w3-center">
-                <img src="img/about_pic.jpg" class="w3-round w3-image" alt="Photo of RocCon Poster" width="500" height="333">
-            </div>
-        </div>
+        <div id="about_container" class="w3-row">
 
-        <div class="w3-row w3-hide-small" style="margin-top:16px;">
-            <!-- Hide this text on small devices -->
-            <div class="w3-col m12">
-                <p>All of ours rooms are filled with all kinds of programming. You'll get a program when you arrive. We
-                    also put the program up shortly before each year's convention so you can plan ahead for what you'd
-                    like to do, who you want to see, and when to hit the food truck rodeo. Plan ahead so that you don't
+            <div style="margin-bottom: 0!important;">
+                <img id="about_img" src="img/about_pic.jpg" class="w3-round w3-image" alt="Photo of RocCon Poster">
+                <p id="about_intro">
+                    RocCon is Rochester's version of the hugely popular conventions held in major
+                    cities around the globe. Our convention is a family friendly event, featuring guests from the fandoms of
+                    comic books,  sci-fi, anime, and gaming (including TCG). RocCon is the creation of a longtime fan of
+                    everything pop culture, who realized in 2009 that Rochester didn't have a "comic-con". RocCon was established
+                    in 2010, and we've held the convention annually each September ever since.
+                    <span class="w3-hide-medium w3-hide-large w3-mobile w3-center read-more"><br/><a href="#">READ MORE</a></span>
+                </p>
+                <p class="w3-hide-small">All of ours rooms are filled with all kinds of programming. You'll get a program when you arrive. We
+                also put the program up shortly before each year's convention so you can plan ahead for what you'd
+                like to do, who you want to see, and when to hit the food truck rodeo. Plan ahead so that you don't
                     miss a moment of the cosplay contest in the big theatre!</p>
-                <p>Each room changes programming just about every hour!  You'll find all our special guests doing panels
+                <p class="w3-hide-small">Each room changes programming just about every hour!  You'll find all our special guests doing panels
                     as well! That includes all our guests, actors, artists, authors, cosplayers, and a variety of other
                     people who come in to do programming for the event. In addition, the food truck rodeo is legendary!
                     When you've worked up an appetite, head out to the side of the venue for choices from pretty much
                     every continent!</p>
-                <p style="margin-bottom: 0;">At RocCon, there's something for everyone. We have: four floors of fandom fun, two big dealers rooms,
+                <p class="w3-hide-small" style="margin-bottom: 0 !important;">At RocCon, there's something for everyone. We have: four floors of fandom fun, two big dealers rooms,
                     a cosplay contest with prizes each day of the show, four event rooms, and a huge theatre for our
                     main events! Programming covers all ages and interests: drawing, writing, superheroes, sci-fi, comic
                     books, gaming, and anime. Everyone is invited to come play in the RocCon Sandbox! The show is
@@ -99,8 +95,7 @@
             </div>
         </div>
     </div>
-
-
+    
     <hr/>
 
     <!-- Second Parallax Image with Schedule Information -->
@@ -340,7 +335,7 @@
             <em>Have any comments or questions?<br>See our information below or use the form below to send us a message!</em>
         </p>
 
-        <div id="location-holder">
+        <div id="location_holder">
             <h4>Location</h4>
             <span>Kodak Theatre & Center</span><br/>
             <span>200 West Ridge Road</span><br/>
