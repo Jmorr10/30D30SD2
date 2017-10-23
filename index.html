@@ -14,9 +14,6 @@
 </head>
 
 <body>
-    <!-- TODO: CONSIDER SPLITTING ABOUT SECTION 1/2 and 1/2 (PICTURE AND TEXT) -->
-    <!-- TODO: JAVASCRIPT - MENU BUTTON -->
-    <!-- TODO: JAVASCRIPT - SHOW SEARCH BOX (upon submission, alert saying not functional) -->
     <!-- TODO: JAVASCRIPT - SCHEDULE MODAL -->
     <!-- TODO: JAVASCRIPT - FORM MODAL -->
     <!-- TODO: JAVASCRIPT - GUEST INFORMATION MODAL -->
@@ -25,7 +22,7 @@
 
     <div class="w3-top">
         <div class="w3-bar w3-card-4 w3-black" id="navbar">
-            <a class="w3-bar-item w3-button w3-hover-black w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleMenu()" title="Toggle Navigation Menu">
                 <i class="fa fa-bars"></i>
             </a>
             <a href="#home" class="w3-bar-item w3-button">HOME</a>
@@ -35,20 +32,24 @@
             <a href="#merchants" class="w3-bar-item w3-button w3-hide-small w3-hide-medium"><i class="fa fa-money"></i> MERCHANT SIGNUP</a>
             <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hide-medium"><i class="fa fa-envelope"></i> CONTACT</a>
             <a href="#tickets" class="w3-bar-item w3-button w3-red"><i class="fa fa-ticket"></i> GET TICKETS</a>
-            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+            <a id="search_btn" onclick="toggleSearch()" href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
                 <i class="fa fa-search"></i>
             </a>
         </div>
 
         <!-- Navbar on small screens -->
         <div id="navmenu" class="w3-bar-block w3-white w3-hide w3-hide-large">
-            <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-            <a href="#schedule" class="w3-bar-item w3-button" onclick="toggleFunction()">SCHEDULE</a>
-            <a href="#guests" class="w3-bar-item w3-button" onclick="toggleFunction()">GUESTS</a>
-            <a href="#merchants" class="w3-bar-item w3-button" onclick="toggleFunction()">MERCHANT SIGNUP</a>
-            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-            <a href="#tickets" class="w3-bar-item w3-button" onclick="toggleFunction()">GET TICKETS</a>
-            <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+            <a href="#about" class="w3-bar-item w3-button" onclick="toggleMenu()">ABOUT</a>
+            <a href="#schedule" class="w3-bar-item w3-button" onclick="toggleMenu()">SCHEDULE</a>
+            <a href="#guests" class="w3-bar-item w3-button" onclick="toggleMenu()">GUESTS</a>
+            <a href="#merchants" class="w3-bar-item w3-button" onclick="toggleMenu()">MERCHANT SIGNUP</a>
+            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleMenu()">CONTACT</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-medium" onclick="toggleMenu(); toggleSearch()">SEARCH</a>
+        </div>
+
+        <!-- Search box -->
+        <div id="search_box">
+            <input type="text" name="search_val" id="search_input" placeholder="Search..." onkeydown="searchKeyDown()">
         </div>
     </div>
 
@@ -95,7 +96,7 @@
             </div>
         </div>
     </div>
-    
+
     <hr/>
 
     <!-- Second Parallax Image with Schedule Information -->
@@ -508,6 +509,46 @@
     </footer>
 
     <script>
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleMenu() {
+            var menu = document.getElementById("navmenu");
+            if (menu.className.indexOf("w3-show") == -1) {
+                menu.className += " w3-show";
+            } else {
+                menu.className = menu.className.replace(" w3-show", "");
+            }
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleSearch() {
+            var searchBox = document.getElementById("search_box"),
+                searchBtn = document.getElementById("search_btn"),
+                searchInput = document.getElementById("search_input");
+            if (searchBtn.className.indexOf("open") == -1) {
+                searchInput.value = "";
+                searchBtn.className += " open";
+                searchBox.className += " open";
+            } else {
+                searchBtn.className = searchBtn.className.replace(" open", "");
+                searchBox.className = searchBox.className.replace(" open", "");
+            }
+        }
+
+        function searchKeyDown(e) {
+            e = e || window.event;
+            if (e.keyCode == 13)
+            {
+                search();
+                return false;
+            }
+            return true;
+        }
+
+        function search() {
+            toggleSearch();
+            alert("Sorry! This doesn't actually work. Thanks for trying it out though!")
+        }
 
         // TODO: THIS CAN BE MOVED TO A SEPARATE JS FILE ONCE ALL JS IS WRITTEN
         // Neat idea for validating fields that should be identical (i.e., confirmation fields)
