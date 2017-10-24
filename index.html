@@ -16,7 +16,6 @@
 <body>
     <!-- TODO: JAVASCRIPT - SCHEDULE MODAL -->
     <!-- TODO: JAVASCRIPT - FORM MODAL -->
-    <!-- TODO: JAVASCRIPT - READ MORE BUTTON -->
 
     <div class="w3-top">
         <div class="w3-bar w3-card-4 w3-black" id="navbar">
@@ -73,7 +72,7 @@
                     comic books,  sci-fi, anime, and gaming (including TCG). RocCon is the creation of a longtime fan of
                     everything pop culture, who realized in 2009 that Rochester didn't have a "comic-con". RocCon was established
                     in 2010, and we've held the convention annually each September ever since.
-                    <span class="w3-hide-medium w3-hide-large w3-mobile w3-center read-more"><br/><a href="#">READ MORE</a></span>
+                    <span class="w3-hide-medium w3-hide-large w3-mobile w3-center read-more"><br/><a href="#" onclick="readMoreAbout(this)">READ MORE</a></span>
                 </p>
                 <p class="w3-hide-small">All of ours rooms are filled with all kinds of programming. You'll get a program when you arrive. We
                 also put the program up shortly before each year's convention so you can plan ahead for what you'd
@@ -587,6 +586,22 @@
         function loadMoreGuests(element) {
             toggleClass(element, "w3-hide");
             toggleClass(document.getElementById("more_guests"), "w3-hide");
+        }
+
+        function readMoreAbout(element) {
+            var aboutContainer = document.getElementById("about_container"),
+                pTags = aboutContainer.getElementsByTagName("p");
+
+            toggleClass(element, "w3-hide");
+
+            // Convert HTMLCollection to array
+            // Could also use Array.from, but I'm trying to maximize compatibility.
+            pTags = [].slice.call(pTags);
+            // Get rid of the first <p>, as that one is already visible.
+            pTags.shift();
+            pTags.forEach(function (e) {
+                toggleClass(e, "w3-hide-small");
+            });
         }
 
         function toggleClass(element, className) {
