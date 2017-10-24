@@ -16,34 +16,45 @@
 <body>
     <div class="w3-top">
         <div class="w3-bar w3-card-4 w3-black" id="navbar">
-            <a class="w3-bar-item w3-button w3-hover-black w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleMenu()" title="Toggle Navigation Menu">
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-large w3-right" href="javascript:void(0);"
+               onclick="RCCN.toggleMenu()" title="Toggle Navigation Menu">
                 <i class="fa fa-bars"></i>
             </a>
             <a href="#home" class="w3-bar-item w3-button">HOME</a>
-            <a href="#about" class="w3-bar-item w3-button w3-hide-small w3-hide-medium"><i class="fa fa-info-circle"></i>  ABOUT</a>
-            <a href="#schedule" class="w3-bar-item w3-button w3-hide-small w3-hide-medium"><i class="fa fa-calendar"></i> SCHEDULE</a>
-            <a href="#guests" class="w3-bar-item w3-button w3-hide-small w3-hide-medium"><i class="fa fa-users"></i> GUESTS</a>
-            <a href="#merchants" class="w3-bar-item w3-button w3-hide-small w3-hide-medium"><i class="fa fa-money"></i> MERCHANT SIGNUP</a>
-            <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hide-medium"><i class="fa fa-envelope"></i> CONTACT</a>
-            <a href="#tickets" class="w3-bar-item w3-button w3-red"><i class="fa fa-ticket"></i> GET TICKETS</a>
-            <a id="search_btn" onclick="toggleSearch()" href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+            <a href="#about" class="w3-bar-item w3-button w3-hide-small w3-hide-medium">
+                <i class="fa fa-info-circle"></i>  ABOUT</a>
+            <a href="#schedule" class="w3-bar-item w3-button w3-hide-small w3-hide-medium">
+                <i class="fa fa-calendar"></i> SCHEDULE</a>
+            <a href="#guests" class="w3-bar-item w3-button w3-hide-small w3-hide-medium">
+                <i class="fa fa-users"></i> GUESTS</a>
+            <a href="#merchants" class="w3-bar-item w3-button w3-hide-small w3-hide-medium">
+                <i class="fa fa-money"></i> MERCHANT SIGNUP</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hide-medium">
+                <i class="fa fa-envelope"></i> CONTACT</a>
+            <a href="#tickets" class="w3-bar-item w3-button w3-red"><i class="fa fa-ticket">
+
+            </i> GET TICKETS</a>
+            <a id="search_btn" onclick="RCCN.toggleSearch()" href="#"
+               class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
                 <i class="fa fa-search"></i>
             </a>
         </div>
 
         <!-- Navbar on small screens -->
         <div id="navmenu" class="w3-bar-block w3-white w3-hide w3-hide-large">
-            <a href="#about" class="w3-bar-item w3-button" onclick="toggleMenu()">ABOUT</a>
-            <a href="#schedule" class="w3-bar-item w3-button" onclick="toggleMenu()">SCHEDULE</a>
-            <a href="#guests" class="w3-bar-item w3-button" onclick="toggleMenu()">GUESTS</a>
-            <a href="#merchants" class="w3-bar-item w3-button" onclick="toggleMenu()">MERCHANT SIGNUP</a>
-            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleMenu()">CONTACT</a>
-            <a href="#" class="w3-bar-item w3-button w3-hide-medium" onclick="toggleMenu(); toggleSearch()">SEARCH</a>
+            <a href="#about" class="w3-bar-item w3-button" onclick="RCCN.toggleMenu()">ABOUT</a>
+            <a href="#schedule" class="w3-bar-item w3-button" onclick="RCCN.toggleMenu()">SCHEDULE</a>
+            <a href="#guests" class="w3-bar-item w3-button" onclick="RCCN.toggleMenu()">GUESTS</a>
+            <a href="#merchants" class="w3-bar-item w3-button" onclick="RCCN.toggleMenu()">MERCHANT SIGNUP</a>
+            <a href="#contact" class="w3-bar-item w3-button" onclick="RCCN.toggleMenu()">CONTACT</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-medium"
+               onclick="RCCN.toggleMenu(); RCCN.toggleSearch()">SEARCH</a>
         </div>
 
         <!-- Search box -->
         <div id="search_box">
-            <input type="text" name="search_val" id="search_input" placeholder="Search..." onkeydown="searchKeyDown()">
+            <input type="text" name="search_val" id="search_input" placeholder="Search..."
+                   onkeydown="RCCN.searchKeyDown()">
         </div>
     </div>
 
@@ -65,28 +76,30 @@
                 <img id="about_img" src="img/about_pic.jpg" class="w3-round w3-image" alt="Photo of RocCon Poster">
                 <p id="about_intro">
                     RocCon is Rochester's version of the hugely popular conventions held in major
-                    cities around the globe. Our convention is a family friendly event, featuring guests from the fandoms of
-                    comic books,  sci-fi, anime, and gaming (including TCG). RocCon is the creation of a longtime fan of
-                    everything pop culture, who realized in 2009 that Rochester didn't have a "comic-con". RocCon was established
-                    in 2010, and we've held the convention annually each September ever since.
-                    <span class="w3-hide-medium w3-hide-large w3-mobile w3-center read-more"><br/><a href="#" onclick="readMoreAbout(this)">READ MORE</a></span>
+                    cities around the globe. Our convention is a family friendly event, featuring guests from the
+                    fandoms of comic books,  sci-fi, anime, and gaming (including TCG). RocCon is the creation of a
+                    longtime fan of everything pop culture, who realized in 2009 that Rochester didn't have a
+                    "comic-con". RocCon was established in 2010, and we've held the convention annually each September
+                    ever since.
+                    <span class="w3-hide-medium w3-hide-large w3-mobile w3-center read-more"><br/>
+                        <a href="#" onclick="RCCN.readMoreAbout(this)">READ MORE</a></span>
                 </p>
-                <p class="w3-hide-small">All of ours rooms are filled with all kinds of programming. You'll get a program when you arrive. We
-                also put the program up shortly before each year's convention so you can plan ahead for what you'd
-                like to do, who you want to see, and when to hit the food truck rodeo. Plan ahead so that you don't
-                    miss a moment of the cosplay contest in the big theatre!</p>
-                <p class="w3-hide-small">Each room changes programming just about every hour!  You'll find all our special guests doing panels
-                    as well! That includes all our guests, actors, artists, authors, cosplayers, and a variety of other
-                    people who come in to do programming for the event. In addition, the food truck rodeo is legendary!
-                    When you've worked up an appetite, head out to the side of the venue for choices from pretty much
-                    every continent!</p>
-                <p class="w3-hide-small" style="margin-bottom: 0 !important;">At RocCon, there's something for everyone. We have: four floors of fandom fun, two big dealers rooms,
-                    a cosplay contest with prizes each day of the show, four event rooms, and a huge theatre for our
-                    main events! Programming covers all ages and interests: drawing, writing, superheroes, sci-fi, comic
-                    books, gaming, and anime. Everyone is invited to come play in the RocCon Sandbox! The show is
-                    appropriate for ages six and over. You'll get to meet well-known, wonderful guests from all the
-                    different genres of the convention and enjoy a wide variety of artists, authors, and vendors of all
-                    kinds!</p>
+                <p class="w3-hide-small">All of ours rooms are filled with all kinds of programming. You'll get a
+                    program when you arrive. We also put the program up shortly before each year's convention so you can
+                    plan ahead for what you'd like to do, who you want to see, and when to hit the food truck rodeo.
+                    Plan ahead so that you don't miss a moment of the cosplay contest in the big theatre!</p>
+                <p class="w3-hide-small">Each room changes programming just about every hour!  You'll find all our
+                    special guests doing panels as well! That includes all our guests, actors, artists, authors,
+                    cosplayers, and a variety of other people who come in to do programming for the event. In addition,
+                    the food truck rodeo is legendary! When you've worked up an appetite, head out to the side of the
+                    venue for choices from pretty much every continent!</p>
+                <p class="w3-hide-small" style="margin-bottom: 0 !important;">At RocCon, there's something for everyone.
+                    We have: four floors of fandom fun, two big dealers rooms, a cosplay contest with prizes each day of
+                    the show, four event rooms, and a huge theatre for our main events! Programming covers all ages and
+                    interests: drawing, writing, superheroes, sci-fi, comic books, gaming, and anime. Everyone is
+                    invited to come play in the RocCon Sandbox! The show is appropriate for ages six and over. You'll
+                    get to meet well-known, wonderful guests from all the different genres of the convention and enjoy
+                    a wide variety of artists, authors, and vendors of all kinds!</p>
             </div>
         </div>
     </div>
@@ -123,27 +136,28 @@
     <div class="w3-content w3-container w3-padding-16" style="padding-bottom: 0 !important;">
         <h3 class="w3-center">SCHEDULE OF EVENTS</h3>
         <p class="w3-center">
-            <em>We have a ton of different panels and events schedule for the convention.<br> Click on a day to view the schedule for that day</em>
+            <em>We have a ton of different panels and events schedule for the convention.<br>
+                Click on a day to view the schedule for that day</em>
         </p>
 
         <div id="day_schedules" class="w3-row w3-center">
             <div class="w3-third">
                 <div class="w3-card-4 w3-opacity-min w3-hover-opacity-off day-tile friday"
-                     onclick="showScheduleMessage()">
+                     onclick="RCCN.showScheduleMessage()">
                     <span class="w3-xlarge w3-show w3-center w3-black absolute-center">
                         FRIDAY</span>
                 </div>
             </div>
             <div class="w3-third">
                 <div class="w3-card-4 w3-opacity-min w3-hover-opacity-off day-tile saturday"
-                     onclick="showScheduleMessage()">
+                     onclick="RCCN.showScheduleMessage()">
                     <span class="w3-xlarge w3-show w3-center w3-black absolute-center">
                         SATURDAY</span>
                 </div>
             </div>
             <div class="w3-third">
                 <div class="w3-card-4 w3-black w3-opacity-min w3-hover-opacity-off day-tile sunday"
-                     onclick="showScheduleMessage()">
+                     onclick="RCCN.showScheduleMessage()">
                     <span class="w3-xlarge w3-show w3-center w3-black absolute-center">
                         SUNDAY</span>
                 </div>
@@ -175,25 +189,29 @@
         <div class="w3-row-padding w3-center guests">
 
             <div class="w3-col m6">
-                <div class="w3-col m6 nested" onclick="showGuestInfo(this)">
-                    <img src="img/guests/barbara_goodson.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Barbara Goodson">
+                <div class="w3-col m6 nested" onclick="RCCN.showGuestInfo(this)">
+                    <img src="img/guests/barbara_goodson.png" style="width:100%" class="w3-hover-opacity"
+                         alt="Barbara Goodson">
                     <div class="w3-large w3-show w3-center w3-black guest-label">Barbara Goodson</div>
                 </div>
 
-                <div class="w3-col m6 nested" onclick="showGuestInfo(this)">
-                    <img src="img/guests/charlet_chung.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Charlet Chung">
+                <div class="w3-col m6 nested" onclick="RCCN.showGuestInfo(this)">
+                    <img src="img/guests/charlet_chung.png" style="width:100%" class="w3-hover-opacity"
+                         alt="Charlet Chung">
                     <div class="w3-large w3-show w3-center w3-black guest-label">Charlet Chung</div>
                 </div>
             </div>
 
             <div class="w3-col m6">
-                <div class="w3-col m6 nested" onclick="showGuestInfo(this)">
-                    <img src="img/guests/chris_jai_alex.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Chris Jai Alex">
+                <div class="w3-col m6 nested" onclick="RCCN.showGuestInfo(this)">
+                    <img src="img/guests/chris_jai_alex.jpg" style="width:100%" class="w3-hover-opacity"
+                         alt="Chris Jai Alex">
                     <div class="w3-large w3-show w3-center w3-black guest-label">Chris Jai Alex</div>
                 </div>
 
-                <div class="w3-col m6 nested" onclick="showGuestInfo(this)">
-                    <img src="img/guests/courtenay_taylor.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Courtenay Taylor">
+                <div class="w3-col m6 nested" onclick="RCCN.showGuestInfo(this)">
+                    <img src="img/guests/courtenay_taylor.jpg" style="width:100%" class="w3-hover-opacity"
+                         alt="Courtenay Taylor">
                     <div class="w3-large w3-show w3-center w3-black guest-label">Courtenay Taylor</div>
                 </div>
             </div>
@@ -202,31 +220,37 @@
         <div class="w3-row-padding w3-center w3-section guests" style="margin: 0 !important;">
 
             <div class="w3-col m6">
-                <div class="w3-col m6 nested" onclick="showGuestInfo(this)">
-                    <img src="img/guests/daisuke_hirakawa.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Daisuke Hirakawa">
+                <div class="w3-col m6 nested" onclick="RCCN.showGuestInfo(this)">
+                    <img src="img/guests/daisuke_hirakawa.jpg" style="width:100%" class="w3-hover-opacity"
+                         alt="Daisuke Hirakawa">
                     <div class="w3-large w3-show w3-center w3-black guest-label">Daisuke Hirakawa</div>
                 </div>
 
-                <div class="w3-col m6 nested" onclick="showGuestInfo(this)">
-                    <img src="img/guests/kimberly_brooks.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Kimberly Brooks">
+                <div class="w3-col m6 nested" onclick="RCCN.showGuestInfo(this)">
+                    <img src="img/guests/kimberly_brooks.png" style="width:100%" class="w3-hover-opacity"
+                         alt="Kimberly Brooks">
                     <div class="w3-large w3-show w3-center w3-black guest-label">Kimberly Brooks</div>
                 </div>
             </div>
 
             <div class="w3-col m6">
-                <div class="w3-col m6 nested" onclick="showGuestInfo(this)">
-                    <img src="img/guests/kyle_hebert.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Kyle Hebert">
+                <div class="w3-col m6 nested" onclick="RCCN.showGuestInfo(this)">
+                    <img src="img/guests/kyle_hebert.png" style="width:100%" class="w3-hover-opacity"
+                         alt="Kyle Hebert">
                     <div class="w3-large w3-show w3-center w3-black guest-label">Kyle Hebert</div>
                 </div>
 
-                <div class="w3-col m6 nested" onclick="showGuestInfo(this)">
-                    <img src="img/guests/long_vo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Long Vo">
+                <div class="w3-col m6 nested" onclick="RCCN.showGuestInfo(this)">
+                    <img src="img/guests/long_vo.png" style="width:100%" class="w3-hover-opacity"
+                         alt="Long Vo">
                     <div class="w3-large w3-show w3-center w3-black guest-label">Long Vo</div>
                 </div>
             </div>
 
-            <button class="w3-button w3-padding-large w3-light-grey" onclick="loadMoreGuests(this)">LOAD MORE</button>
-            <p id="more_guests" class="w3-hide" style="margin-bottom: 0 !important;">Sorry!<br>No more guests to show at the moment.</p>
+            <button class="w3-button w3-padding-large w3-light-grey"
+                    onclick="RCCN.loadMoreGuests(this)">LOAD MORE</button>
+            <p id="more_guests" class="w3-hide"
+               style="margin-bottom: 0 !important;">Sorry!<br>No more guests to show at the moment.</p>
         </div>
     </div>
 
@@ -246,7 +270,8 @@
             <em>Interested in being a merchant for RocCon?<br> Use the forum below to sign up as a merchant!</em>
         </p>
 
-        <button class="w3-btn w3-light-grey w3-center show-form-btn" onclick="showMerchantForm()">SIGNUP FORM</button>
+        <button class="w3-btn w3-light-grey w3-center show-form-btn"
+                onclick="RCCN.showMerchantForm()">SIGNUP FORM</button>
     </div>
 
     <hr/>
@@ -263,7 +288,8 @@
     <div class="w3-content w3-container w3-center">
         <h3>Contact Information</h3>
         <p>
-            <em>Have any comments or questions?<br>See our information below or use the form below to send us a message!</em>
+            <em>Have any comments or questions?<br>
+                See our information below or use the form below to send us a message!</em>
         </p>
 
         <div id="location_holder">
@@ -276,7 +302,8 @@
         <h4>Social Media</h4>
         <div class="w3-row-padding">
             <div class="w3-quarter w3-center w3-margin-bottom">
-                <a href="https://www.facebook.com/roccon.net/" target="_blank" class="fa fa-3x fa-facebook-official"></a>
+                <a href="https://www.facebook.com/roccon.net/"
+                   target="_blank" class="fa fa-3x fa-facebook-official"></a>
             </div>
             <div class="w3-quarter w3-center w3-margin-bottom">
                 <a href="#" class="fa fa-3x fa-google-plus-square"></a>
@@ -303,16 +330,18 @@
                     </div>
                     <div class="w3-half">
                         <input name="return_email" class="w3-input w3-border"
-                               type="email" placeholder="Email">
+                               type="email" placeholder="Email" required>
                     </div>
                 </div>
             </div>
             <div class="w3-row" style="padding: 0 16px;">
                         <textarea class="w3-input w3-border" style="margin: 8px 0 0 0;"
-                                  placeholder="Message"></textarea>
+                                  placeholder="Message" required></textarea>
             </div>
             <div class="w3-row-padding w3-section w3-display-container" style="height: 43px;">
-                <button class="w3-btn w3-display-bottomright w3-red submit-form-btn"><i class="fa fa-paper-plane"></i> SEND</button>
+                <button class="w3-btn w3-display-bottomright w3-red submit-form-btn"
+                        onclick="RCCN.submitForm(this, event)">
+                    <i class="fa fa-paper-plane"></i> SEND</button>
             </div>
         </form>
     </div>
@@ -336,7 +365,7 @@
         an email to let you know when tickets go on sale!</em>
         </p>
 
-        <button class="w3-btn w3-light-grey w3-center show-form-btn" onclick="showTicketsForm()">RSVP FORM</button>
+        <button class="w3-btn w3-light-grey w3-center show-form-btn" onclick="RCCN.showTicketsForm()">RSVP FORM</button>
     </div>
 
     <!-- Footer -->
@@ -346,8 +375,9 @@
     </footer>
 
     <div id="guest_modal" class="w3-modal w3-black" onclick="this.style.display='none'" style="display: none;">
-        <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent" style="margin: 16px !important;">
+        <span class="w3-button w3-large w3-black w3-display-topright"
+              title="Close Modal Image"><i class="fa fa-remove"></i></span>
+        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent" style="margin: 16px;">
             <img id="guest_img" class="w3-image">
             <h3 id="guest_name" class="w3-large"></h3>
             <p id="guest_info" style="text-align: left;"></p>
@@ -399,7 +429,7 @@
                             <div class="w3-half" style="margin-bottom: 16px;">
                                 <input required class="w3-input w3-border" type="email"
                                        placeholder="Email"
-                                       oninput="form.confirm_email.pattern = escapeRegExp(this.value)">
+                                       oninput="form.confirm_email.pattern = RCCN.escapeRegExp(this.value)">
                             </div>
                             <div class="w3-half">
                                 <input required  name="confirm_email" class="w3-input w3-border" type="email" pattern=""
@@ -419,7 +449,7 @@
 
                         <h4>Which days will you be attending?</h4>
                         <p>
-                            <input class="w3-check" id="all_days" type="checkbox" onclick="toggleAll(this)">
+                            <input class="w3-check" id="all_days" type="checkbox" onclick="RCCN.toggleAll(this)">
                             <label for="all_days">All</label>
                         </p>
                         <p>
@@ -441,7 +471,8 @@
                                   placeholder="Note any special accommodations here"></textarea>
                 </div>
                 <div class="w3-row-padding w3-section w3-display-container" style="height: 43px;">
-                    <button class="w3-btn w3-display-bottomright w3-red submit-form-btn" onclick="submitForm()">REGISTER</button>
+                    <button class="w3-btn w3-display-bottomright w3-red submit-form-btn"
+                            onclick="RCCN.submitForm(this, event)">REGISTER</button>
                 </div>
             </form>
         </div>
@@ -473,7 +504,7 @@
                             <div class="w3-half" style="margin-bottom: 16px;">
                                 <input required class="w3-input w3-border" type="email"
                                        placeholder="Email"
-                                       oninput="form.confirm_email.pattern = escapeRegExp(this.value)">
+                                       oninput="form.confirm_email.pattern = RCCN.escapeRegExp(this.value)">
                             </div>
                             <div class="w3-half">
                                 <input required  name="confirm_email" class="w3-input w3-border" type="email" pattern=""
@@ -484,7 +515,7 @@
 
                             <h4>Which days will you be attending?</h4>
                             <p>
-                                <input class="w3-check" id="fan_all_days" type="checkbox" onclick="toggleAll(this)">
+                                <input class="w3-check" id="fan_all_days" type="checkbox" onclick="RCCN.toggleAll(this)">
                                 <label for="fan_all_days">All</label>
                             </p>
                             <p>
@@ -505,7 +536,7 @@
                         <div class="check-group">
                             <h4>Which types of events are you going to attend?</h4>
                             <p>
-                                <input class="w3-check" id="all_events" type="checkbox" onclick="toggleAll(this)">
+                                <input class="w3-check" id="all_events" type="checkbox" onclick="RCCN.toggleAll(this)">
                                 <label for="all_events">All Events</label>
                             </p>
                             <p>
@@ -540,189 +571,247 @@
                                   placeholder="Note any special requests, comments, etc. here"></textarea>
                 </div>
                 <div class="w3-row-padding w3-section w3-display-container" style="height: 43px;">
-                    <button class="w3-btn w3-display-bottomright w3-red submit-form-btn" onclick="submitForm()">SUBMIT</button>
+                    <button class="w3-btn w3-display-bottomright w3-red submit-form-btn"
+                            onclick="RCCN.submitForm(this, event)">SUBMIT</button>
                 </div>
             </form>
         </div>
     </div>
 
     <script>
-        /*****************************/
-        /* MENU AND SEARCH FUNCTIONS */
-        /*****************************/
 
-        // Used to toggle the menu on small screens when clicking on the menu button
-        function toggleMenu() {
-            var menu = document.getElementById("navmenu");
-            toggleClass(menu, "w3-show");
-        }
+        var RCCN = (function () {
 
-        // Used to toggle the search box when clicking on the search button
-        function toggleSearch() {
-            var searchBox = document.getElementById("search_box"),
-                searchBtn = document.getElementById("search_btn"),
-                searchInput = document.getElementById("search_input");
+                    /*****************************/
+                    /* MENU AND SEARCH FUNCTIONS */
+                    /*****************************/
 
-            toggleClass(searchBox, "open");
-            toggleClass(searchBtn, "open");
+                // Used to toggle the menu on small screens when clicking on the menu button
+                function toggleMenu() {
+                    var menu = document.getElementById("navmenu");
+                    toggleClass(menu, "w3-show");
+                }
 
-            // Make sure you clear the old value
-            searchInput.value = "";
-        }
+                // Used to toggle the search box when clicking on the search button
+                function toggleSearch() {
+                    var searchBox = document.getElementById("search_box"),
+                        searchBtn = document.getElementById("search_btn"),
+                        searchInput = document.getElementById("search_input");
 
-        // Listens to the keydown events of the search box to check for submission
-        function searchKeyDown(e) {
-            // Make sure that we have access to the event itself
-            e = e || self.event;
+                    toggleClass(searchBox, "open");
+                    toggleClass(searchBtn, "open");
 
-            // Listens for the "ENTER" button
-            if (e.keyCode == 13)
-            {
-                search();
-                return false;
-            }
-            return true;
-        }
+                    // Make sure you clear the old value
+                    searchInput.value = "";
+                }
 
-        // Simply closes out the search box and alerts the user
-        function search() {
-            toggleSearch();
-            alert("Sorry! This doesn't actually work. Thanks for trying it out though!")
-        }
+                // Listens to the keydown events of the search box to check for submission
+                function searchKeyDown(e) {
+                    // Make sure that we have access to the event itself
+                    e = e || self.event;
 
-        /***************************/
-        /* ABOUT SECTION FUNCTIONS */
-        /***************************/
+                    // Listens for the "ENTER" button
+                    if (e.keyCode == 13)
+                    {
+                        search();
+                        return false;
+                    }
+                    return true;
+                }
 
-        // Displays the hidden text in the about section
-        function readMoreAbout(element) {
-            var aboutContainer = document.getElementById("about_container"),
-                pTags = toArray(aboutContainer.getElementsByTagName("p"));
+                // Simply closes out the search box and alerts the user
+                function search() {
+                    toggleSearch();
+                    alert("Sorry! This doesn't actually work. Thanks for trying it out though!")
+                }
 
-            toggleClass(element, "w3-hide");
+                    /***************************/
+                    /* ABOUT SECTION FUNCTIONS */
+                    /***************************/
 
-            // Get rid of the first <p>, as that one is already visible.
-            pTags.shift();
-            pTags.forEach(function (e) {
-                toggleClass(e, "w3-hide-small");
-            });
-        }
+                // Displays the hidden text in the about section
+                function readMoreAbout(element) {
+                    var aboutContainer = document.getElementById("about_container"),
+                        pTags = toArray(aboutContainer.getElementsByTagName("p"));
 
-        /******************************/
-        /* SCHEDULE SECTION FUNCTIONS */
-        /******************************/
+                    toggleClass(element, "w3-hide");
 
-        // Alerts the user to the fact that schedule information is not yet available
-        function showScheduleMessage() {
-            alert("Sorry! We don't quite have the schedule pinned down at this point. Please check back later for more information!");
-        }
+                    // Get rid of the first <p>, as that one is already visible.
+                    pTags.shift();
+                    pTags.forEach(function (e) {
+                        toggleClass(e, "w3-hide-small");
+                    });
+                }
 
-        /****************************/
-        /* GUESTS SECTION FUNCTIONS */
-        /****************************/
+                    /******************************/
+                    /* SCHEDULE SECTION FUNCTIONS */
+                    /******************************/
 
-        // Populates the guest information modal and displays it
-        function showGuestInfo(element) {
-            var imgSrc = element.getElementsByTagName("img")[0].src,
-                guestName = element.getElementsByClassName("guest-label")[0].innerText,
-                guestModal = document.getElementById("guest_modal"),
-                nameField = document.getElementById("guest_name"),
-                picField = document.getElementById("guest_img"),
-                infoField = document.getElementById("guest_info"),
-                infoTxt = document.getElementById(guestName.toLowerCase().replace(/ /g, "_")).innerText;
+                // Alerts the user to the fact that schedule information is not yet available
+                function showScheduleMessage() {
+                    alert("Sorry! We don't quite have the schedule pinned down at this point. " +
+                        "Please check back later for more information!");
+                }
 
-            nameField.innerText = guestName;
-            picField.src = imgSrc;
-            infoField.innerText = infoTxt;
-            guestModal.style.display = "block";
-            guestModal.scrollTop = 0;
-        }
+                    /****************************/
+                    /* GUESTS SECTION FUNCTIONS */
+                    /****************************/
 
-        // Lets the user know there are no more guests to show at the moment
-        function loadMoreGuests(element) {
-            toggleClass(element, "w3-hide");
-            // This toggle "w3-hide" since, in order to show the element, this class must be removed from the element
-            toggleClass(document.getElementById("more_guests"), "w3-hide");
-        }
+                // Populates the guest information modal and displays it
+                function showGuestInfo(element) {
+                    var imgSrc = element.getElementsByTagName("img")[0].src,
+                        guestName = element.getElementsByClassName("guest-label")[0].innerText,
+                        guestModal = document.getElementById("guest_modal"),
+                        nameField = document.getElementById("guest_name"),
+                        picField = document.getElementById("guest_img"),
+                        infoField = document.getElementById("guest_info"),
+                        infoTxt = document.getElementById(guestName.toLowerCase().replace(/ /g, "_")).innerText;
 
-        /************************/
-        /* MODAL FORM FUNCTIONS */
-        /************************/
+                    nameField.innerText = guestName;
+                    picField.src = imgSrc;
+                    infoField.innerText = infoTxt;
+                    guestModal.style.display = "block";
+                    guestModal.scrollTop = 0;
+                }
 
-        // Show the Merchant Signup Form
-        function showMerchantForm() {
-            showForm("merchant_form_modal");
-        }
+                // Lets the user know there are no more guests to show at the moment
+                function loadMoreGuests(element) {
+                    toggleClass(element, "w3-hide");
+                    // This toggle "w3-hide" since, in order to show the element, this class must be removed from the element
+                    toggleClass(document.getElementById("more_guests"), "w3-hide");
+                }
 
-        // Show the RSVP form
-        function showTicketsForm() {
-            showForm("tickets_form_modal");
-        }
+                    /************************/
+                    /* MODAL FORM FUNCTIONS */
+                    /************************/
 
-        // Generic function to display a modal form
-        function showForm(id) {
-            var formModal = document.getElementById(id),
-                form = formModal.getElementsByTagName("form")[0],
-                checkgroups = toArray(form.getElementsByClassName("check-group"));
+                // Show the Merchant Signup Form
+                function showMerchantForm() {
+                    showForm("merchant_form_modal");
+                }
 
-            // Make sure all of the checkboxes on the form are enabled
-            checkgroups.forEach(function (e) {
-                var checkboxes = toArray(e.getElementsByTagName("input"));
-                checkboxes.forEach(function (cb) {
-                    cb.disabled = false;
-                });
-            });
+                // Show the RSVP form
+                function showTicketsForm() {
+                    showForm("tickets_form_modal");
+                }
 
-            // Reset and display
-            form.reset();
-            formModal.style.display = "block";
-            formModal.scrollTop = 0;
-        }
+                // Generic function to display a modal form
+                function showForm(id) {
+                    var formModal = document.getElementById(id),
+                        form = formModal.getElementsByTagName("form")[0];
 
-        // Controls the "All" checkbox options. Toggles the checked and disabled states of the other checkboxes in the check-group
-        function toggleAll(element) {
-            var checkboxes = toArray(element.parentNode.parentNode.getElementsByTagName("input"));
+                    // Reset and display
+                    resetForm(form);
+                    formModal.style.display = "block";
+                    formModal.scrollTop = 0;
+                }
 
-            checkboxes.shift();
-            checkboxes.forEach(function (e) {
-                toggleClass(e, "disabled");
-                e.checked = element.checked;
-                e.disabled = !e.disabled;
-            });
-        }
+                function resetForm(form) {
+                    var checkgroups = toArray(form.getElementsByClassName("check-group"));
 
-        // Alerts the user that the form has been submitted
-        function submitForm() {
-            alert("Form successfully submitted!");
-        }
+                    // Make sure all of the checkboxes on the form are enabled
+                    checkgroups.forEach(function (e) {
+                        var checkboxes = toArray(e.getElementsByTagName("input"));
+                        checkboxes.forEach(function (cb) {
+                            cb.disabled = false;
+                        });
+                    });
 
-        /*********************/
-        /* Utility Functions */
-        /*********************/
+                    form.reset();
+                }
 
-        // Neat idea for validating fields that should be identical (i.e., confirmation fields)
-        // Borrowed from https://stackoverflow.com/a/26439639
-        function escapeRegExp(str) {
-            return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-        }
+                // Controls the "All" checkbox options.
+                // Toggles the checked and disabled states of the other checkboxes in the check-group
+                function toggleAll(element) {
+                    var checkboxes = toArray(element.parentNode.parentNode.getElementsByTagName("input"));
 
-        // A function that converts a HTMLCollection to an array for use with Array.forEach
-        function toArray(obj) {
-            // Could also use Array.from, but I'm trying to maximize compatibility.
-            return [].slice.call(obj);
-        }
+                    checkboxes.shift();
+                    checkboxes.forEach(function (e) {
+                        toggleClass(e, "disabled");
+                        e.checked = element.checked;
+                        e.disabled = !e.disabled;
+                    });
+                }
 
-        // A utility function to toggle a class on an element
-        function toggleClass(element, className) {
-            var classes = element.className.split(" "),
-                idx = classes.indexOf(className);
-            if (idx == -1) {
-                element.className += " " + className;
-            } else {
-                classes.splice(idx, 1);
-                element.className = classes.join(" ");
-            }
-        }
+                // Alerts the user that the form has been submitted
+                function submitForm(el, ev) {
+                    var form = nearestParentOfType(el, "form");
+
+                    if (form.checkValidity()) {
+                        ev.preventDefault();
+                        if (form.id === "merchant_form" || form.id === "tickets_form") {
+                            var modal = nearestParentOfClass(form, "w3-modal");
+                            modal.style.display = "none";
+                        }
+                        resetForm(form);
+                        alert("Form successfully submitted!");
+                    }
+                }
+
+                    /*********************/
+                    /* Utility Functions */
+                    /*********************/
+
+                // Neat idea for validating fields that should be identical (i.e., confirmation fields)
+                // Borrowed from https://stackoverflow.com/a/26439639
+                function escapeRegExp(str) {
+                    return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+                }
+
+                // A function that finds the nearest parent with a given class
+                function nearestParentOfType(el, pType) {
+                    var parent = el;
+                    pType = pType.toUpperCase();
+                    while (parent.parentNode && parent.tagName != pType) {
+                        parent = parent.parentNode;
+                    }
+                    return (parent.tagName === pType) ? parent : el;
+                }
+
+                // A function that finds the nearest parent with a given class
+                function nearestParentOfClass(el, cls) {
+                    var parent = el;
+                    while (parent.parentNode && !parent.classList.contains(cls)) {
+                        parent = parent.parentNode;
+                    }
+                    return (parent.classList.contains(cls)) ? parent : el;
+                }
+
+                // A function that converts a HTMLCollection to an array for use with Array.forEach
+                function toArray(obj) {
+                    // Could also use Array.from, but I'm trying to maximize compatibility.
+                    return [].slice.call(obj);
+                }
+
+                // A utility function to toggle a class on an element
+                function toggleClass(element, className) {
+                    var classes = element.className.split(" "),
+                        idx = classes.indexOf(className);
+                    if (idx == -1) {
+                        element.className += " " + className;
+                    } else {
+                        classes.splice(idx, 1);
+                        element.className = classes.join(" ");
+                    }
+                }
+
+                return {
+                    "toggleMenu" : toggleMenu,
+                    "toggleSearch" : toggleSearch,
+                    "searchKeyDown" : searchKeyDown,
+                    "readMoreAbout" : readMoreAbout,
+                    "showScheduleMessage" : showScheduleMessage,
+                    "showGuestInfo" : showGuestInfo,
+                    "loadMoreGuests" : loadMoreGuests,
+                    "showMerchantForm" : showMerchantForm,
+                    "showTicketsForm" : showTicketsForm,
+                    "toggleAll" : toggleAll,
+                    "submitForm" : submitForm,
+                    "escapeRegExp" : escapeRegExp
+                };
+        })();
+
+
     </script>
 </body>
 </html>

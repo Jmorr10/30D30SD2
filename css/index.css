@@ -363,6 +363,10 @@ form {
     #about_intro {
         margin-bottom: 16px !important;
     }
+
+    .w3-modal-content {
+        margin: auto !important;
+    }
 }
 
 @media only screen and (min-device-width: 760px) {
