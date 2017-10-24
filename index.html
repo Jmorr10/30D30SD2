@@ -16,9 +16,7 @@
 <body>
     <!-- TODO: JAVASCRIPT - SCHEDULE MODAL -->
     <!-- TODO: JAVASCRIPT - FORM MODAL -->
-    <!-- TODO: JAVASCRIPT - GUEST INFORMATION MODAL -->
     <!-- TODO: JAVASCRIPT - READ MORE BUTTON -->
-    <!-- TODO: JAVASCRIPT - LOAD MORE GUESTS BUTTON (simply add element saying "Sorry! No more guests to show at the moment!") -->
 
     <div class="w3-top">
         <div class="w3-bar w3-card-4 w3-black" id="navbar">
@@ -178,24 +176,24 @@
         <div class="w3-row-padding w3-center guests">
 
             <div class="w3-col m6">
-                <div class="w3-col m6 nested">
+                <div class="w3-col m6 nested" onclick="showGuestInfo(this)">
                     <img src="img/guests/barbara_goodson.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Barbara Goodson">
                     <div class="w3-large w3-show w3-center w3-black guest-label">Barbara Goodson</div>
                 </div>
 
-                <div class="w3-col m6 nested">
+                <div class="w3-col m6 nested" onclick="showGuestInfo(this)">
                     <img src="img/guests/charlet_chung.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Charlet Chung">
                     <div class="w3-large w3-show w3-center w3-black guest-label">Charlet Chung</div>
                 </div>
             </div>
 
             <div class="w3-col m6">
-                <div class="w3-col m6 nested">
+                <div class="w3-col m6 nested" onclick="showGuestInfo(this)">
                     <img src="img/guests/chris_jai_alex.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Chris Jai Alex">
                     <div class="w3-large w3-show w3-center w3-black guest-label">Chris Jai Alex</div>
                 </div>
 
-                <div class="w3-col m6 nested">
+                <div class="w3-col m6 nested" onclick="showGuestInfo(this)">
                     <img src="img/guests/courtenay_taylor.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Courtenay Taylor">
                     <div class="w3-large w3-show w3-center w3-black guest-label">Courtenay Taylor</div>
                 </div>
@@ -205,30 +203,31 @@
         <div class="w3-row-padding w3-center w3-section guests" style="margin: 0 !important;">
 
             <div class="w3-col m6">
-                <div class="w3-col m6 nested">
+                <div class="w3-col m6 nested" onclick="showGuestInfo(this)">
                     <img src="img/guests/daisuke_hirakawa.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Daisuke Hirakawa">
                     <div class="w3-large w3-show w3-center w3-black guest-label">Daisuke Hirakawa</div>
                 </div>
 
-                <div class="w3-col m6 nested">
+                <div class="w3-col m6 nested" onclick="showGuestInfo(this)">
                     <img src="img/guests/kimberly_brooks.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Kimberly Brooks">
                     <div class="w3-large w3-show w3-center w3-black guest-label">Kimberly Brooks</div>
                 </div>
             </div>
 
             <div class="w3-col m6">
-                <div class="w3-col m6 nested">
+                <div class="w3-col m6 nested" onclick="showGuestInfo(this)">
                     <img src="img/guests/kyle_hebert.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Kyle Hebert">
                     <div class="w3-large w3-show w3-center w3-black guest-label">Kyle Hebert</div>
                 </div>
 
-                <div class="w3-col m6 nested">
+                <div class="w3-col m6 nested" onclick="showGuestInfo(this)">
                     <img src="img/guests/long_vo.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Long Vo">
                     <div class="w3-large w3-show w3-center w3-black guest-label">Long Vo</div>
                 </div>
             </div>
 
-            <button class="w3-button w3-padding-large w3-light-grey">LOAD MORE</button>
+            <button class="w3-button w3-padding-large w3-light-grey" onclick="loadMoreGuests(this)">LOAD MORE</button>
+            <p id="more_guests" class="w3-hide" style="margin-bottom: 0 !important;">Sorry!<br>No more guests to show at the moment.</p>
         </div>
     </div>
 
@@ -508,16 +507,39 @@
         <span>© 2017 Joseph Morris. All Rights Reserved.</span>
     </footer>
 
+    <div id="guest_modal" class="w3-modal w3-black" onclick="this.style.display='none'" style="display: none;">
+        <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent" style="margin: 16px !important;">
+            <img id="guest_img" class="w3-image">
+            <h3 id="guest_name" class="w3-large"></h3>
+            <p id="guest_info" style="text-align: left;"></p>
+        </div>
+    </div>
+
+    <div class="w3-hide">
+        <!-- Borrowed from http://www.anime-expo.org/guests/ - Used for filler purposes only -->
+        <p id="barbara_goodson">Among the over 200 characters Barbara Goodson has voiced, she is most known for creating the voice of Empress Rita Repulsa on Mighty Morphin Power Rangers, Mother Talzin in Star Wars: The Clone Wars, Naota in FLCL, Red Fraggle in the animated Fraggle Rock, Granny Chiyo in Naruto, Lady Vashj in World of Warcraft, Sera and Marie Crystal in Robotech, Darling in Lady and the Tramp II, and Cruella Deville and Cinderella’s Step Mother in Disney-On-Ice. Barbara was extremely proud to be awarded a Best Actor Award for Mother Talzin in Star Wars: The Clone Wars in 2012 by Behind The Voices Actors.</p>
+        <p id="charlet_chung">Charlet Chung is a Japanese/Korean-American television and film actor who is also the voice of D.Va from Blizzard Entertainment’s OVERWATCH and Seraph from CALL OF DUTY: BLACK OPS III.  Her extensive list of on-screen credits include appearances on truTV’s FAMELESS, Netflix’s GRACE AND FRANKIE and FreeForm’s MYSTERY GIRLS, just to name a few.  Charlet is also a series regular on an upcoming animated series as well as a main character in 4 video games that are releasing throughout the year.</p>
+        <p id="chris_jai_alex">Chris Jai has worked in all aspects of the business with credits on camera from film and tv; TURN “Titus”, 6 WAYS TO DIE “Frank Casper” opposite Tom Sizemore, and Vivica A. Fox, along with various video game and animation voice work including STEVEN UNIVERSE “Lonely Blade”, THE BOONDOCKS “Catcher Freeman” and legacy character “Tusk” from KILLER INSTINCT.
+
+            He’s not too shabby with action and stunt roles in BATMAN VS. SUPERMAN, CAPTAIN AMERICA CIVIL WAR, GRIMM, and the main double in season one of SUPERGIRL “J’onn J’onzz The Martian Manhunter.”</p>
+        <p id="courtenay_taylor">Psychotic biotic? Check. Conflicted Jedi? Check. Elusive and sexy spy? Check and check! That’s right – Jack from Mass Effect, Juhani from Knights of the Old Republic and Ada Wong of Resident Evil 6 all enjoy the same vocal chords – those of actress Courtenay Taylor!
+
+            Travel the ‘Verse with her as the female player voice in the Firefly Online game. Listen for her as the female player voice in FALLOUT 4. Tune into Cartoon Network’s “OK KO: Let’s Be Heroes!” to hear her in the title role. She can also be heard as Starla, Audrey and a plethora of other ladies in “Regular Show.”</p>
+        <p id="daisuke_hirakawa">Born in Niigata City, during his youth, he used to watch and daydream about super hero series like Knight Rider, The A-Team and The Greatest American Hero. He is presently the leading Japanese dubbing actor for the famous movies “Pirates of the Caribbean as Will Turner (Orlando Bloom), and as Loki (Tom Hiddleton) from the Avengers series.
+
+            He also represents the voice of many characters in the anime industry.  For Start, Noriaki Kakyoin from “Jojo’s Bizarre adventures, Stardust Crusader”. Rei Ryugasaki  from “Free!” and, Momotaro in “Hozuki’s Coolheadedness”are other famous examples.</p>
+        <p id="kimberly_brooks">Kimberly Brooks voices Mom McStuffins, Doc and Donny’s doctor mom, who is always on hand to offer advice on Doc’s “diagnoses,” in Doc McStuffins. Brooks’ television voiceover roles include Mimi on Hanna-Barbera’s Dexter’s Laboratory, Allura on Netflix’s Voltron: Legendary Defender and Buena Girl on Mucha Lucha. Her additional TV credits include What’s New Scooby-Doo?, Phineas and Ferb, Steven Universe, Ben 10 Ultimate Alien, Winx Club, Rugrats, and Fairly Odd Parents. She received critical acclaim for her performance as Batwoman, in “Batman: Mystery of the Batwoman.”</p>
+        <p id="kyle_hebert">Kyle Hebert’s credits include Wreck-It Ralph/Street Fighter (Ryu), Naruto (Kiba), Bleach (Aizen, Ganju), League of Legends (Ezreal, Jarvan, and Graves) and Gurren Lagann (Kamina). He is best known as the Narrator and Teen Gohan from the Funimation dub of Dragon Ball Z, and is currently heard on Dragon Ball Super/Kai on Cartoon Network. Other fan faves include Blue Exorcist (Bon Suguro), Fire Emblem Awakening (Frederick, Validar), Fullmetal Alchemist (Vato Falman), Tales of Symphonia (Richter Abend) and Star Ocean (Dias, Arumat, Crow).</p>
+        <p id="long_vo">Long Vo is a Senior Producer and Lead Artist at UDON Entertainment. Long is most known for his art direction and illustration on various Capcom projects from the Tatsunoko VS Capcom, to Super Street fighter 2 Turbo HD Remix, Street Fighter 4 & V and latest Ultra Street Fighter 2. Long is currently designing merchandise for UDONCollectibles.com and Nsurgo.com.</p>
+    </div>
+
     <script>
 
         // Used to toggle the menu on small screens when clicking on the menu button
         function toggleMenu() {
             var menu = document.getElementById("navmenu");
-            if (menu.className.indexOf("w3-show") == -1) {
-                menu.className += " w3-show";
-            } else {
-                menu.className = menu.className.replace(" w3-show", "");
-            }
+            toggleClass(menu, "w3-show");
         }
 
         // Used to toggle the menu on small screens when clicking on the menu button
@@ -525,18 +547,14 @@
             var searchBox = document.getElementById("search_box"),
                 searchBtn = document.getElementById("search_btn"),
                 searchInput = document.getElementById("search_input");
-            if (searchBtn.className.indexOf("open") == -1) {
-                searchInput.value = "";
-                searchBtn.className += " open";
-                searchBox.className += " open";
-            } else {
-                searchBtn.className = searchBtn.className.replace(" open", "");
-                searchBox.className = searchBox.className.replace(" open", "");
-            }
+
+            toggleClass(searchBox, "open");
+            toggleClass(searchBtn, "open");
+            searchInput.value = "";
         }
 
         function searchKeyDown(e) {
-            e = e || window.event;
+            e = e || self.event;
             if (e.keyCode == 13)
             {
                 search();
@@ -548,6 +566,38 @@
         function search() {
             toggleSearch();
             alert("Sorry! This doesn't actually work. Thanks for trying it out though!")
+        }
+
+        function showGuestInfo(element) {
+            var imgSrc = element.getElementsByTagName("img")[0].src,
+                guestName = element.getElementsByClassName("guest-label")[0].innerText,
+                guest_modal = document.getElementById("guest_modal"),
+                nameField = document.getElementById("guest_name"),
+                picField = document.getElementById("guest_img"),
+                infoField = document.getElementById("guest_info"),
+                infoTxt = document.getElementById(guestName.toLowerCase().replace(/ /g, "_")).innerText;
+
+            nameField.innerText = guestName;
+            picField.src = imgSrc;
+            infoField.innerText = infoTxt;
+            guest_modal.style.display = "block";
+            guest_modal.scrollTop = 0;
+        }
+
+        function loadMoreGuests(element) {
+            toggleClass(element, "w3-hide");
+            toggleClass(document.getElementById("more_guests"), "w3-hide");
+        }
+
+        function toggleClass(element, className) {
+            var classes = element.className.split(" "),
+                idx = classes.indexOf(className);
+            if (idx == -1) {
+                element.className += " " + className;
+            } else {
+                classes.splice(idx, 1);
+                element.className = classes.join(" ");
+            }
         }
 
         // TODO: THIS CAN BE MOVED TO A SEPARATE JS FILE ONCE ALL JS IS WRITTEN
