@@ -14,9 +14,6 @@
 </head>
 
 <body>
-    <!-- TODO: JAVASCRIPT - SCHEDULE MODAL -->
-    <!-- TODO: JAVASCRIPT - FORM MODAL -->
-
     <div class="w3-top">
         <div class="w3-bar w3-card-4 w3-black" id="navbar">
             <a class="w3-bar-item w3-button w3-hover-black w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleMenu()" title="Toggle Navigation Menu">
@@ -131,19 +128,22 @@
 
         <div id="day_schedules" class="w3-row w3-center">
             <div class="w3-third">
-                <div class="w3-card-4 w3-opacity-min w3-hover-opacity-off day-tile friday">
+                <div class="w3-card-4 w3-opacity-min w3-hover-opacity-off day-tile friday"
+                     onclick="showScheduleMessage()">
                     <span class="w3-xlarge w3-show w3-center w3-black absolute-center">
                         FRIDAY</span>
                 </div>
             </div>
             <div class="w3-third">
-                <div class="w3-card-4 w3-opacity-min w3-hover-opacity-off day-tile saturday">
+                <div class="w3-card-4 w3-opacity-min w3-hover-opacity-off day-tile saturday"
+                     onclick="showScheduleMessage()">
                     <span class="w3-xlarge w3-show w3-center w3-black absolute-center">
                         SATURDAY</span>
                 </div>
             </div>
             <div class="w3-third">
-                <div class="w3-card-4 w3-black w3-opacity-min w3-hover-opacity-off day-tile sunday">
+                <div class="w3-card-4 w3-black w3-opacity-min w3-hover-opacity-off day-tile sunday"
+                     onclick="showScheduleMessage()">
                     <span class="w3-xlarge w3-show w3-center w3-black absolute-center">
                         SUNDAY</span>
                 </div>
@@ -246,75 +246,7 @@
             <em>Interested in being a merchant for RocCon?<br> Use the forum below to sign up as a merchant!</em>
         </p>
 
-        <form class="w3-panel w3-card w3-hide" id="merchant_form" action="#">
-            <h2>Merchant Signup</h2>
-
-
-            <div class="w3-row-padding">
-                <div class="w3-half">
-                    <h4>Contact Information</h4>
-                    <div class="w3-row-padding" style="margin:0 -16px;">
-                        <div class="w3-half">
-                            <input required class="w3-input w3-border"
-                                   style="margin: 8px 0 16px 0;"
-                                   type="text" placeholder="First Name">
-                        </div>
-                        <div class="w3-half">
-                            <input name="last_name" required class="w3-input w3-border"
-                                   style="margin: 0 0 16px 0;"
-                                   type="text" placeholder="Last Name">
-                        </div>
-                    </div>
-                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px;">
-                        <div class="w3-half" style="margin-bottom: 16px;">
-                            <input required class="w3-input w3-border" type="email"
-                                   placeholder="Email"
-                                   oninput="form.confirm_email.pattern = escapeRegExp(this.value)">
-                        </div>
-                        <div class="w3-half">
-                            <input required  name="confirm_email" class="w3-input w3-border" type="email" pattern=""
-                                   title="Email address entries do not match!" placeholder="Confirm Email">
-                        </div>
-                    </div>
-                    <h4>What will you be selling?</h4>
-                    <select required  id="merch_type" class="w3-select w3-border">
-                        <option selected disabled value="">Select Merchant Type</option>
-                        <option>Author</option>
-                        <option>Artist</option>
-                        <option>Food</option>
-                        <option>General Merchandise</option>
-                    </select>
-                </div>
-                <div class="w3-half check-group">
-
-                    <h4>Which days will you be attending?</h4>
-                    <p>
-                        <input class="w3-check" id="all_days" type="checkbox">
-                        <label for="all_days">All</label>
-                    </p>
-                    <p>
-                        <input class="w3-check" id="friday" type="checkbox">
-                        <label for="friday">Friday - Sept. 14th</label>
-                    </p>
-                    <p>
-                        <input class="w3-check" id="saturday" type="checkbox">
-                        <label for="saturday">Saturday - Sept. 15th</label>
-                    </p>
-                    <p>
-                        <input class="w3-check" id="sunday" type="checkbox">
-                        <label for="sunday">Sunday - Sept. 16th</label>
-                    </p>
-                </div>
-            </div>
-            <div class="w3-row-padding" style="padding: 0 16px;">
-                        <textarea class="w3-input w3-border" style="margin: 16px 0 8px 0;"
-                                  placeholder="Note any special accommodations here"></textarea>
-            </div>
-            <div class="w3-row-padding w3-section w3-display-container" style="height: 43px;">
-                <button class="w3-btn w3-display-bottomright w3-red submit-form-btn">REGISTER</button>
-            </div>
-        </form>
-        <button class="w3-btn w3-light-grey w3-center show-form-btn">SIGNUP FORM</button>
+        <button class="w3-btn w3-light-grey w3-center show-form-btn" onclick="showMerchantForm()">SIGNUP FORM</button>
     </div>
 
     <hr/>
@@ -363,7 +295,6 @@
         <form class="w3-panel w3-card" id="contact_form" action="#">
             <h2>Contact Form</h2>
 
-
             <div class="w3-row">
                 <div class="w3-row-padding" style="margin: 16px 0 8px 0;">
                     <div class="w3-half">
@@ -405,99 +336,7 @@
         an email to let you know when tickets go on sale!</em>
         </p>
 
-        <form class="w3-panel w3-card w3-hide" id="tickets_form" action="#">
-            <h2>Ticket RSVP</h2>
-
-            <div class="w3-row-padding">
-                <div class="w3-half">
-                    <h4>Contact Information</h4>
-                    <div class="w3-row-padding" style="margin:0 -16px;">
-                        <div class="w3-half">
-                            <input required class="w3-input w3-border"
-                                   style="margin: 8px 0 16px 0;"
-                                   type="text" placeholder="Name">
-                        </div>
-                        <div class="w3-half">
-                            <input name="num_attending" required class="w3-input w3-border"
-                                   style="margin: 0 0 16px 0;" min="1"
-                                   type="number" placeholder="# Attending">
-                        </div>
-                    </div>
-                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px;">
-                        <div class="w3-half" style="margin-bottom: 16px;">
-                            <input required class="w3-input w3-border" type="email"
-                                   placeholder="Email"
-                                   oninput="form.confirm_email.pattern = escapeRegExp(this.value)">
-                        </div>
-                        <div class="w3-half">
-                            <input required  name="confirm_email" class="w3-input w3-border" type="email" pattern=""
-                                   title="Email address entries do not match!" placeholder="Confirm Email">
-                        </div>
-                    </div>
-                    <div class="check-group">
-
-                        <h4>Which days will you be attending?</h4>
-                        <p>
-                            <input class="w3-check" id="fan_all_days" type="checkbox">
-                            <label for="fan_all_days">All</label>
-                        </p>
-                        <p>
-                            <input class="w3-check" id="fan_friday" type="checkbox">
-                            <label for="fan_friday">Friday - Sept. 14th</label>
-                        </p>
-                        <p>
-                            <input class="w3-check" id="fan_saturday" type="checkbox">
-                            <label for="fan_saturday">Saturday - Sept. 15th</label>
-                        </p>
-                        <p>
-                            <input class="w3-check" id="fan_sunday" type="checkbox">
-                            <label for="fan_sunday">Sunday - Sept. 16th</label>
-                        </p>
-                    </div>
-                </div>
-                <div class="w3-half check-group">
-                    <div class="check-group">
-                        <h4>Which types of events are you going to attend?</h4>
-                        <p>
-                            <input class="w3-check" id="all_events" type="checkbox">
-                            <label for="all_events">All Events</label>
-                        </p>
-                        <p>
-                            <input class="w3-check" id="amv_contest" type="checkbox">
-                            <label for="friday">AMV Contest</label>
-                        </p>
-                        <p>
-                            <input class="w3-check" id="autograph_booths" type="checkbox">
-                            <label for="autograph_booths">Autograph Booths</label>
-                        </p>
-                        <p>
-                            <input class="w3-check" id="cosplay_contest" type="checkbox">
-                            <label for="cosplay_contest">Cosplay Contest</label>
-                        </p>
-                        <p>
-                            <input class="w3-check" id="dealers_room" type="checkbox">
-                            <label for="dealers_room">Dealers Room</label>
-                        </p>
-                        <p>
-                            <input class="w3-check" id="screenings" type="checkbox">
-                            <label for="screenings">Screenings</label>
-                        </p>
-                        <p>
-                            <input class="w3-check" id="skill_workshops" type="checkbox">
-                            <label for="skill_workshops">Skill Workshops</label>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-row-padding" style="padding: 0 16px;">
-                        <textarea class="w3-input w3-border" style="margin: 16px 0 8px 0;"
-                                  placeholder="Note any special requests, comments, etc. here"></textarea>
-            </div>
-            <div class="w3-row-padding w3-section w3-display-container" style="height: 43px;">
-                <button class="w3-btn w3-display-bottomright w3-red submit-form-btn" style="">SUBMIT</button>
-            </div>
-        </form>
-        <button class="w3-btn w3-light-grey w3-center show-form-btn">RSVP FORM</button>
+        <button class="w3-btn w3-light-grey w3-center show-form-btn" onclick="showTicketsForm()">RSVP FORM</button>
     </div>
 
     <!-- Footer -->
@@ -533,7 +372,184 @@
         <p id="long_vo">Long Vo is a Senior Producer and Lead Artist at UDON Entertainment. Long is most known for his art direction and illustration on various Capcom projects from the Tatsunoko VS Capcom, to Super Street fighter 2 Turbo HD Remix, Street Fighter 4 & V and latest Ultra Street Fighter 2. Long is currently designing merchandise for UDONCollectibles.com and Nsurgo.com.</p>
     </div>
 
+    <div id="merchant_form_modal" class="w3-modal w3-black" style="display: none;">
+        <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"
+              onclick="this.parentNode.style.display='none'" ><i class="fa fa-remove"></i></span>
+        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent" style="width: auto !important;">
+            <form class="w3-panel w3-card" id="merchant_form" action="#">
+                <h2>Merchant Signup</h2>
+
+
+                <div class="w3-row-padding">
+                    <div class="w3-half">
+                        <h4>Contact Information</h4>
+                        <div class="w3-row-padding" style="margin:0 -16px;">
+                            <div class="w3-half">
+                                <input required class="w3-input w3-border"
+                                       style="margin: 8px 0 16px 0;"
+                                       type="text" placeholder="First Name">
+                            </div>
+                            <div class="w3-half">
+                                <input name="last_name" required class="w3-input w3-border"
+                                       style="margin: 0 0 16px 0;"
+                                       type="text" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="w3-row-padding" style="margin:0 -16px 8px -16px;">
+                            <div class="w3-half" style="margin-bottom: 16px;">
+                                <input required class="w3-input w3-border" type="email"
+                                       placeholder="Email"
+                                       oninput="form.confirm_email.pattern = escapeRegExp(this.value)">
+                            </div>
+                            <div class="w3-half">
+                                <input required  name="confirm_email" class="w3-input w3-border" type="email" pattern=""
+                                       title="Email address entries do not match!" placeholder="Confirm Email">
+                            </div>
+                        </div>
+                        <h4>What will you be selling?</h4>
+                        <select required  id="merch_type" class="w3-select w3-border">
+                            <option selected disabled value="">Select Merchant Type</option>
+                            <option>Author</option>
+                            <option>Artist</option>
+                            <option>Food</option>
+                            <option>General Merchandise</option>
+                        </select>
+                    </div>
+                    <div class="w3-half check-group">
+
+                        <h4>Which days will you be attending?</h4>
+                        <p>
+                            <input class="w3-check" id="all_days" type="checkbox" onclick="toggleAll(this)">
+                            <label for="all_days">All</label>
+                        </p>
+                        <p>
+                            <input class="w3-check" id="friday" type="checkbox">
+                            <label for="friday">Friday - Sept. 14th</label>
+                        </p>
+                        <p>
+                            <input class="w3-check" id="saturday" type="checkbox">
+                            <label for="saturday">Saturday - Sept. 15th</label>
+                        </p>
+                        <p>
+                            <input class="w3-check" id="sunday" type="checkbox">
+                            <label for="sunday">Sunday - Sept. 16th</label>
+                        </p>
+                    </div>
+                </div>
+                <div class="w3-row-padding" style="padding: 0 16px;">
+                        <textarea class="w3-input w3-border" style="margin: 16px 0 0 0;"
+                                  placeholder="Note any special accommodations here"></textarea>
+                </div>
+                <div class="w3-row-padding w3-section w3-display-container" style="height: 43px;">
+                    <button class="w3-btn w3-display-bottomright w3-red submit-form-btn" onclick="submitForm()">REGISTER</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="tickets_form_modal" class="w3-modal w3-black" style="display: none;">
+        <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"
+              onclick="this.parentNode.style.display='none'" ><i class="fa fa-remove"></i></span>
+        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent" style="width: auto !important;">
+            <form class="w3-panel w3-card" id="tickets_form" action="#">
+                <h2>Ticket RSVP</h2>
+
+                <div class="w3-row-padding">
+                    <div class="w3-half">
+                        <h4>Contact Information</h4>
+                        <div class="w3-row-padding" style="margin:0 -16px;">
+                            <div class="w3-half">
+                                <input required class="w3-input w3-border"
+                                       style="margin: 8px 0 16px 0;"
+                                       type="text" placeholder="Name" name="ticket_name">
+                            </div>
+                            <div class="w3-half">
+                                <input name="num_attending" required class="w3-input w3-border"
+                                       style="margin: 0 0 16px 0;" min="1"
+                                       type="number" placeholder="# Attending">
+                            </div>
+                        </div>
+                        <div class="w3-row-padding" style="margin:0 -16px 8px -16px;">
+                            <div class="w3-half" style="margin-bottom: 16px;">
+                                <input required class="w3-input w3-border" type="email"
+                                       placeholder="Email"
+                                       oninput="form.confirm_email.pattern = escapeRegExp(this.value)">
+                            </div>
+                            <div class="w3-half">
+                                <input required  name="confirm_email" class="w3-input w3-border" type="email" pattern=""
+                                       title="Email address entries do not match!" placeholder="Confirm Email">
+                            </div>
+                        </div>
+                        <div class="check-group">
+
+                            <h4>Which days will you be attending?</h4>
+                            <p>
+                                <input class="w3-check" id="fan_all_days" type="checkbox" onclick="toggleAll(this)">
+                                <label for="fan_all_days">All</label>
+                            </p>
+                            <p>
+                                <input class="w3-check" id="fan_friday" type="checkbox">
+                                <label for="fan_friday">Friday - Sept. 14th</label>
+                            </p>
+                            <p>
+                                <input class="w3-check" id="fan_saturday" type="checkbox">
+                                <label for="fan_saturday">Saturday - Sept. 15th</label>
+                            </p>
+                            <p>
+                                <input class="w3-check" id="fan_sunday" type="checkbox">
+                                <label for="fan_sunday">Sunday - Sept. 16th</label>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w3-half check-group">
+                        <div class="check-group">
+                            <h4>Which types of events are you going to attend?</h4>
+                            <p>
+                                <input class="w3-check" id="all_events" type="checkbox" onclick="toggleAll(this)">
+                                <label for="all_events">All Events</label>
+                            </p>
+                            <p>
+                                <input class="w3-check" id="amv_contest" type="checkbox">
+                                <label for="amv_contest">AMV Contest</label>
+                            </p>
+                            <p>
+                                <input class="w3-check" id="autograph_booths" type="checkbox">
+                                <label for="autograph_booths">Autograph Booths</label>
+                            </p>
+                            <p>
+                                <input class="w3-check" id="cosplay_contest" type="checkbox">
+                                <label for="cosplay_contest">Cosplay Contest</label>
+                            </p>
+                            <p>
+                                <input class="w3-check" id="dealers_room" type="checkbox">
+                                <label for="dealers_room">Dealers Room</label>
+                            </p>
+                            <p>
+                                <input class="w3-check" id="screenings" type="checkbox">
+                                <label for="screenings">Screenings</label>
+                            </p>
+                            <p>
+                                <input class="w3-check" id="skill_workshops" type="checkbox">
+                                <label for="skill_workshops">Skill Workshops</label>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-row-padding" style="padding: 0 16px;">
+                        <textarea class="w3-input w3-border" style="margin: 16px 0 0 0;"
+                                  placeholder="Note any special requests, comments, etc. here"></textarea>
+                </div>
+                <div class="w3-row-padding w3-section w3-display-container" style="height: 43px;">
+                    <button class="w3-btn w3-display-bottomright w3-red submit-form-btn" onclick="submitForm()">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script>
+        /*****************************/
+        /* MENU AND SEARCH FUNCTIONS */
+        /*****************************/
 
         // Used to toggle the menu on small screens when clicking on the menu button
         function toggleMenu() {
@@ -541,7 +557,7 @@
             toggleClass(menu, "w3-show");
         }
 
-        // Used to toggle the menu on small screens when clicking on the menu button
+        // Used to toggle the search box when clicking on the search button
         function toggleSearch() {
             var searchBox = document.getElementById("search_box"),
                 searchBtn = document.getElementById("search_btn"),
@@ -549,11 +565,17 @@
 
             toggleClass(searchBox, "open");
             toggleClass(searchBtn, "open");
+
+            // Make sure you clear the old value
             searchInput.value = "";
         }
 
+        // Listens to the keydown events of the search box to check for submission
         function searchKeyDown(e) {
+            // Make sure that we have access to the event itself
             e = e || self.event;
+
+            // Listens for the "ENTER" button
             if (e.keyCode == 13)
             {
                 search();
@@ -562,15 +584,48 @@
             return true;
         }
 
+        // Simply closes out the search box and alerts the user
         function search() {
             toggleSearch();
             alert("Sorry! This doesn't actually work. Thanks for trying it out though!")
         }
 
+        /***************************/
+        /* ABOUT SECTION FUNCTIONS */
+        /***************************/
+
+        // Displays the hidden text in the about section
+        function readMoreAbout(element) {
+            var aboutContainer = document.getElementById("about_container"),
+                pTags = toArray(aboutContainer.getElementsByTagName("p"));
+
+            toggleClass(element, "w3-hide");
+
+            // Get rid of the first <p>, as that one is already visible.
+            pTags.shift();
+            pTags.forEach(function (e) {
+                toggleClass(e, "w3-hide-small");
+            });
+        }
+
+        /******************************/
+        /* SCHEDULE SECTION FUNCTIONS */
+        /******************************/
+
+        // Alerts the user to the fact that schedule information is not yet available
+        function showScheduleMessage() {
+            alert("Sorry! We don't quite have the schedule pinned down at this point. Please check back later for more information!");
+        }
+
+        /****************************/
+        /* GUESTS SECTION FUNCTIONS */
+        /****************************/
+
+        // Populates the guest information modal and displays it
         function showGuestInfo(element) {
             var imgSrc = element.getElementsByTagName("img")[0].src,
                 guestName = element.getElementsByClassName("guest-label")[0].innerText,
-                guest_modal = document.getElementById("guest_modal"),
+                guestModal = document.getElementById("guest_modal"),
                 nameField = document.getElementById("guest_name"),
                 picField = document.getElementById("guest_img"),
                 infoField = document.getElementById("guest_info"),
@@ -579,31 +634,85 @@
             nameField.innerText = guestName;
             picField.src = imgSrc;
             infoField.innerText = infoTxt;
-            guest_modal.style.display = "block";
-            guest_modal.scrollTop = 0;
+            guestModal.style.display = "block";
+            guestModal.scrollTop = 0;
         }
 
+        // Lets the user know there are no more guests to show at the moment
         function loadMoreGuests(element) {
             toggleClass(element, "w3-hide");
+            // This toggle "w3-hide" since, in order to show the element, this class must be removed from the element
             toggleClass(document.getElementById("more_guests"), "w3-hide");
         }
 
-        function readMoreAbout(element) {
-            var aboutContainer = document.getElementById("about_container"),
-                pTags = aboutContainer.getElementsByTagName("p");
+        /************************/
+        /* MODAL FORM FUNCTIONS */
+        /************************/
 
-            toggleClass(element, "w3-hide");
+        // Show the Merchant Signup Form
+        function showMerchantForm() {
+            showForm("merchant_form_modal");
+        }
 
-            // Convert HTMLCollection to array
-            // Could also use Array.from, but I'm trying to maximize compatibility.
-            pTags = [].slice.call(pTags);
-            // Get rid of the first <p>, as that one is already visible.
-            pTags.shift();
-            pTags.forEach(function (e) {
-                toggleClass(e, "w3-hide-small");
+        // Show the RSVP form
+        function showTicketsForm() {
+            showForm("tickets_form_modal");
+        }
+
+        // Generic function to display a modal form
+        function showForm(id) {
+            var formModal = document.getElementById(id),
+                form = formModal.getElementsByTagName("form")[0],
+                checkgroups = toArray(form.getElementsByClassName("check-group"));
+
+            // Make sure all of the checkboxes on the form are enabled
+            checkgroups.forEach(function (e) {
+                var checkboxes = toArray(e.getElementsByTagName("input"));
+                checkboxes.forEach(function (cb) {
+                    cb.disabled = false;
+                });
+            });
+
+            // Reset and display
+            form.reset();
+            formModal.style.display = "block";
+            formModal.scrollTop = 0;
+        }
+
+        // Controls the "All" checkbox options. Toggles the checked and disabled states of the other checkboxes in the check-group
+        function toggleAll(element) {
+            var checkboxes = toArray(element.parentNode.parentNode.getElementsByTagName("input"));
+
+            checkboxes.shift();
+            checkboxes.forEach(function (e) {
+                toggleClass(e, "disabled");
+                e.checked = element.checked;
+                e.disabled = !e.disabled;
             });
         }
 
+        // Alerts the user that the form has been submitted
+        function submitForm() {
+            alert("Form successfully submitted!");
+        }
+
+        /*********************/
+        /* Utility Functions */
+        /*********************/
+
+        // Neat idea for validating fields that should be identical (i.e., confirmation fields)
+        // Borrowed from https://stackoverflow.com/a/26439639
+        function escapeRegExp(str) {
+            return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+        }
+
+        // A function that converts a HTMLCollection to an array for use with Array.forEach
+        function toArray(obj) {
+            // Could also use Array.from, but I'm trying to maximize compatibility.
+            return [].slice.call(obj);
+        }
+
+        // A utility function to toggle a class on an element
         function toggleClass(element, className) {
             var classes = element.className.split(" "),
                 idx = classes.indexOf(className);
@@ -613,13 +722,6 @@
                 classes.splice(idx, 1);
                 element.className = classes.join(" ");
             }
-        }
-
-        // TODO: THIS CAN BE MOVED TO A SEPARATE JS FILE ONCE ALL JS IS WRITTEN
-        // Neat idea for validating fields that should be identical (i.e., confirmation fields)
-        // Borrowed from https://stackoverflow.com/a/26439639
-        function escapeRegExp(str) {
-            return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
         }
     </script>
 </body>
