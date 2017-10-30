@@ -1,6 +1,8 @@
 Name: Joseph Morris
 Date: 10/24/2017
 
+[Click here for live demo!](http://themanysidesof.me/demo/30D30SD2/ "Click here for live demo!")
+
 ![Screenshot](Screenshot.jpg "Screenshot of the site")
 
 # Description:
